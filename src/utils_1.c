@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs_utils.c                                    :+:      :+:    :+:   */
+/*   utils_1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:58:03 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/20 15:55:17 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/20 16:05:47 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-t_flags	zero_init_struct()
+int width_or_precision(char *s)
 {
-	t_flags f;
-	
-	f.placeholder = 0;
-	f.hashtag = 0;
-	f.plus_sign = 0;
-	f.space = 0;
-	f.minus_sign = 0;
-	f.zero = 0;
-	f.width = 0;
-	f.point = 0;
-	f.precision = 0;
-	return (f);
+	int i;
+	int result;
+
+	i = 0;
+	result = 0;
+	while (is_digit(s[i]))
+	{
+		result = (10 * result) + ft_atoi(s[i]);
+		i++;
+	}
+	return (result);
 }
 
