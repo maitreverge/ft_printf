@@ -59,6 +59,21 @@ int width_or_precision(char *s)
 	return (result);
 }
 
+t_flags cleaning_parsing(t_flags f)
+{
+	// ? clean the placeholder if wrong values
+	f.placeholder = 0;
+	f.hashtag = 0;
+	f.plus_sign = 0;
+	f.space = 0;
+	f.minus_sign = 0;
+	f.zero = 0;
+	f.width = 0;
+	f.point = 0;
+	f.precision = 0;
+	return (f);
+}
+
 t_flags	turbo_parsing(char *format)
 {
 	t_flags current_flag;
@@ -107,15 +122,9 @@ t_flags	turbo_parsing(char *format)
 	current_flag.placeholder = format[i];
 	return (current_flag);
 
+	// ! needs a cleaning parsing function
 
-	// ? More conditionals of self cancelling conditions
-	/*
-	if (current_flag.space == 1 && current_flag.plus_sign == 1)
-	{
-		current_flag.space = 0;
-		current_flag.plus_sign = 0;
-	}
-	*/
+
 }
 
 
