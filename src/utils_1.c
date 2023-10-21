@@ -6,16 +6,16 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/20 16:05:47 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/21 12:25:08 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-int width_or_precision(char *s)
+int	width_or_precision(char *s)
 {
-	int i;
-	int result;
+	int	i;
+	int	result;
 
 	i = 0;
 	result = 0;

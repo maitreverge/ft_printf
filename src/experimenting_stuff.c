@@ -28,9 +28,9 @@ void	print_struct(t_flags s)
 
 }
 
-t_flags	zero_init_struct()
+t_flags	zero_init_struct(void)
 {
-	t_flags f;
+	t_flags	f;
 	
 	f.placeholder = 0;
 	f.hashtag = 0;
@@ -44,10 +44,10 @@ t_flags	zero_init_struct()
 	return (f);
 }
 
-int width_or_precision(char *s)
+int	width_or_precision(char *s)
 {
-	int i;
-	int result;
+	int	i;
+	int	result;
 
 	i = 0;
 	result = 0;
@@ -62,24 +62,34 @@ int width_or_precision(char *s)
 t_flags cleaning_parsing(t_flags f)
 {
 	// ? clean the placeholder if wrong values
-	f.placeholder = 0;
-	f.hashtag = 0;
-	f.plus_sign = 0;
-	f.space = 0;
-	f.minus_sign = 0;
-	f.zero = 0;
-	f.width = 0;
-	f.point = 0;
-	f.precision = 0;
+	// f.placeholder = 0;
+	if (f.plus_sign == 1 && f.space == 1)
+	{
+		f.plus_sign = 0;
+		f.space = 0;
+	}
+	if (f.hashtag > 1)
+		f.hashtag = 0;
+	if (f.plus_sign > 1)
+		f.plus_sign = 0;
+	if (f.space > 1)
+		f.space = 0;
+	if (f.minus_sign > 1)
+		f.minus_sign = 0;
+	if (f.zero > 1)
+		f.zero = 0;
+	if (f.point > 1)	
+		f.point = 0;
 	return (f);
 }
 
 t_flags	turbo_parsing(char *format)
 {
-	t_flags current_flag;
+	t_flags	current_flag;
 
 	current_flag = zero_init_struct();
-	int i = 0;
+	int	i;
+	i = 0;
 	// ! 1/6 parsing # / space / + / -
 	while (!isdigit(format[i]))
 	{
@@ -120,21 +130,25 @@ t_flags	turbo_parsing(char *format)
 			i++;
 	}
 	current_flag.placeholder = format[i];
+	
+	// ! needs a cleaning parsing function
+	current_flag = cleaning_parsing(current_flag);
+
+
 	return (current_flag);
 
-	// ! needs a cleaning parsing function
+
 
 
 }
-
-
 
 
 int main(void)
 {
 	t_flags test;
 
-	char *str = "abcd%# -+# +--  #+ -+ #+ #-#  - +000506.4747cABCD";
+	// char *str = "abcd%# -+# +--  #+ -+ #+ #-#  - +00000506.47447ajjABCD";
+	char *str = "abcd%#-++0506.47447ajjABCD";
 
 	test = turbo_parsing(&str[4]);
 	print_struct(test);

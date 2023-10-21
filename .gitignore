@@ -58,7 +58,6 @@ dkms.conf
 [._]s[a-w][a-z]
 
 # My Files
-.normignore
 master_main.c
 .DS_Store
 Makefile copy
