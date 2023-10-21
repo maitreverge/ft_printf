@@ -14,6 +14,20 @@ typedef struct s_flags {
 	int precision;
 } t_flags;
 
+void	print_struct(t_flags s)
+{
+	printf("placeholder = %c\n---\n", s.placeholder);
+	printf("hashtag = %i\n---\n", s.hashtag);
+	printf("plus_sign = %i\n---\n", s.plus_sign);
+	printf("space = %i\n---\n", s.space);
+	printf("minus_sign = %i\n---\n", s.minus_sign);
+	printf("zero = %i\n---\n", s.zero);
+	printf("point = %i\n---\n", s.point);
+	printf("width = %i\n---\n", s.width);
+	printf("precision = %i\n---\n", s.precision);
+
+}
+
 t_flags	zero_init_struct()
 {
 	t_flags f;
@@ -51,64 +65,80 @@ t_flags	turbo_parsing(char *format)
 
 	current_flag = zero_init_struct();
 	int i = 0;
+	// ! 1/6 parsing # / space / + / -
 	while (!isdigit(format[i]))
 	{
 		if (format[i] == '#')
-			current_flag.hashtag = 1;
+			current_flag.hashtag++;
 		if (format[i] == ' ')
-			current_flag.space = 1;
+			current_flag.space++;
 		if (format[i] == '+')
-			current_flag.plus_sign = 1;
+			current_flag.plus_sign++;
 		if (format[i] == '-')
-			current_flag.minus_sign = 1;
-		if (format[i] == '0')
-			current_flag.zero = 1;
+			current_flag.minus_sign++;
 		i++;
 	}
-	// pousser le parsing des combinaisons de flags qui s'annullent
+	// ! 2/6 parsing, zero number
+	while (format[i] == '0')
+	{
+		current_flag.zero++;
+		i++;
+	}
+	// ! 3/6 parsing width
+	if (format[i] != '.' && isdigit(format[i]))
+	{
+		current_flag.width = width_or_precision(&format[i]);
+		while (isdigit(format[i]))
+			i++;
+	}
+	// ! 4/6 parsing point
+	while (format[i] == '.')
+	{
+		current_flag.point++;
+		i++;
+	}
+	// ! 5/6 parsing precision
+	if (current_flag.point == 1 && isdigit(format[i]))
+	{
+		current_flag.precision = width_or_precision(&format[i]);
+		while (isdigit(format[i]))
+			i++;
+	}
+	current_flag.placeholder = format[i];
+	return (current_flag);
+
+
+	// ? More conditionals of self cancelling conditions
+	/*
 	if (current_flag.space == 1 && current_flag.plus_sign == 1)
 	{
 		current_flag.space = 0;
 		current_flag.plus_sign = 0;
 	}
-	current_flag.width = width_or_precision(&format[i]);
-	while (isdigit(format[i]))
-		i++;
-	if (format[i] == '.')
-	{
-		current_flag.point = 1;
-		i++;
-	}
-	if (current_flag.point = 1)
-		current_flag.precision = width_or_precision(&format[i]);
-	while (isdigit(format[i]))
-		i++;
-	current_flag.placeholder = format[i];
-	return (current_flag);
+	*/
 }
 
 
 
-void	print_struct(t_flags s)
-{
-	printf("placeholder = %c\n---\n", s.placeholder);
-	printf("hashtag = %i\n---\n", s.hashtag);
-	printf("plus_sign = %i\n---\n", s.plus_sign);
-	printf("space = %i\n---\n", s.space);
-	printf("minus_sign = %i\n---\n", s.minus_sign);
-	printf("zero = %i\n---\n", s.zero);
-	printf("point = %i\n---\n", s.point);
-	printf("width = %i\n---\n", s.width);
-	printf("precision = %i\n---\n", s.precision);
-
-}
 
 int main(void)
 {
 	t_flags test;
 
-	char *str = "abcd%# +-056.56cABCD";
+	char *str = "abcd%# -+# +--  #+ -+ #+ #-#  - +000506.4747cABCD";
 
-	test = turbo_parsing(str);
+	test = turbo_parsing(&str[4]);
 	print_struct(test);
 }
+
+/*
+
+
+# -+# +--  #+ -+ #+ #-#  - +
+
+6 #
+10 spaces
+6 minus signs
+6 plus signs
+
+*/
