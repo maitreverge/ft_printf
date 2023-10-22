@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/21 12:25:08 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/22 12:14:02 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,26 @@ int	width_or_precision(char *s)
 	return (result);
 }
 
+void	print_width_space(int nb)
+{
+	int	i;
+
+	i = 0;
+	while (i < nb)
+	{
+		ft_putchar(' ');
+		i++;
+	}
+}
+
+void	print_width_zero(int nb)
+{
+	int	i;
+
+	i = 0;
+	while (i < nb)
+	{
+		ft_putchar('0');
+		i++;
+	}
+}

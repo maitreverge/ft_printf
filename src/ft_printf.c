@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/22 11:36:40 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/22 11:43:29 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int	placeholder_behaviour(t_flags flags, va_list args)
 
 	result = 0;
 	if (flags.placeholder == '%')
-		result = print_char('%');
+		result = print_char('%', flags);
 	else if (flags.placeholder == 'c')
-		result = print_char(va_arg(args, char));
+		result = print_char(va_arg(args, char), flags);
 	else if (flags.placeholder == 's')
-		result = print_string(va_arg(args, char *));
+		result = print_string(va_arg(args, char *), flags);
 	else if (flags.placeholder == 'p')
 		result =
 	else if (flags.placeholder == 'd')

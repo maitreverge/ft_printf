@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/22 11:34:48 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/22 12:15:36 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,10 @@ t_flags	zero_init_struct(void);
 t_flags	first_part_parsing(char *format, int *i);
 t_flags	cleaning_parsing(t_flags f);
 
-int		print_char(char c); // 'c'
+int		print_char(char c, t_flags flags);
+
+void	print_width_space(int nb);
+void	print_width_zero(int nb);
 
 
 #endif

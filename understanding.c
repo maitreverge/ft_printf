@@ -13,9 +13,9 @@ int main(void)
 	int octal = 0337;
 
 
-	// printf("[%c]\n-----\n\n", c);
+	printf("[%12%c]\n-----\n\n", c);
 
-	printf("[% s]\n-----\n\n", str);
+	// printf("[% s]\n-----\n\n", str);
 	
 	// printf("[%p]\n-----\n\n", adress);
 	
