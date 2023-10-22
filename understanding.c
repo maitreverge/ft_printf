@@ -4,7 +4,7 @@ int main(void)
 {
 
 	char c = 'A';
-	char *str = "Salut";
+	char *str = NULL;
 	char *adress = "qwghtgtrefrg";
 	int pos_int = 123;
 	int neg_int = -42;
@@ -13,9 +13,9 @@ int main(void)
 	int octal = 0337;
 
 
-	printf("[%12%c]\n-----\n\n", c);
+	// printf("[%12%c]\n-----\n\n", c);
 
-	// printf("[% s]\n-----\n\n", str);
+	printf("[%7.6s]\n-----\n\n", str);
 	
 	// printf("[%p]\n-----\n\n", adress);
 	
