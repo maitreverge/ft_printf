@@ -6,48 +6,36 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/21 13:29:50 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/22 11:36:40 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-t_flags	turbo_parsing(char *format)
+static int	placeholder_behaviour(t_flags flags, va_list args)
 {
-	t_flags	current_flag;
-	int		i;
+	int	result;
 
-	current_flag = zero_init_struct();
-	i = 0;
-	while (!ft_isdigit(format[i++]))
-	{
-		if (format[i] == '#')
-			current_flag.hashtag++;
-		if (format[i] == ' ')
-			current_flag.space++;
-		if (format[i] == '+')
-			current_flag.plus_sign++;
-		if (format[i] == '-')
-			current_flag.minus_sign++;
-	}
-	while (format[i++] == '0')
-		current_flag.zero++;
-	if (format[i] != '.' && ft_isdigit(format[i]))
-	{
-		while (ft_isdigit(format[i]))
-			i++;
-	}
-	while (format[i++] == '.')
-		current_flag.point++;
-	if (current_flag.point == 1 && ft_isdigit(format[i]))
-	{
-		current_flag.precision = width_or_precision(&format[i]);
-		while (ft_isdigit(format[i]))
-			i++;
-	}
-	current_flag.placeholder = format[i];
-	current_flag = cleaning_parsing(current_flag);
-	return (current_flag);
+	result = 0;
+	if (flags.placeholder == '%')
+		result = print_char('%');
+	else if (flags.placeholder == 'c')
+		result = print_char(va_arg(args, char));
+	else if (flags.placeholder == 's')
+		result = print_string(va_arg(args, char *));
+	else if (flags.placeholder == 'p')
+		result =
+	else if (flags.placeholder == 'd')
+		result =
+	else if (flags.placeholder == 'i')
+		result =
+	else if (flags.placeholder == 'u')
+		result =
+	else if (flags.placeholder == 'x')
+		result =
+	else if (flags.placeholder == 'X')
+		result =
+	return (result);
 }
 
 int	ft_printf(const char *format, ...)
@@ -60,12 +48,12 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	len_printf = 0;
-	while (format[i])
+	while (format[i++])
 	{
 		if (format[i] == '%')
 		{
 			current_flag = turbo_parsing(&format[i + 1]);
-			// la fonction qui trie selon le placeholder
+			len_printf += placeholder_behaviour(current_flag, args);
 			i++;
 		}
 		else
@@ -73,7 +61,6 @@ int	ft_printf(const char *format, ...)
 			ft_putchar(format[i]);
 			len_printf++;
 		}
-		i++;
 	}
 	va_end(args);
 	return (len_printf);

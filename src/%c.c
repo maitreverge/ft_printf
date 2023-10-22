@@ -6,9 +6,14 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:47:00 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/19 16:58:24 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/22 11:34:14 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
+int	print_char(char c)
+{
+	ft_putchar('c');
+	return (1);
+}
