@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/20 16:21:01 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/22 11:34:48 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,26 @@
 
 // 9 fields
 typedef struct s_flags {
-	char placeholder;
-	int hashtag;
-	int plus_sign;
-	int space;
-	int minus_sign;
-	int zero;
-	int point;
-	int width;
-	int precision;
-} t_flags;
+	char	placeholder;
+	int		hashtag;
+	int		plus_sign;
+	int		space;
+	int		minus_sign;
+	int		zero;
+	int		point;
+	int		width;
+	int		precision;
+}	t_flags;
 
 
 int		ft_printf(const char *format, ...);
 
+t_flags	turbo_parsing(char *format);
 t_flags	zero_init_struct(void);
-f_flags	turbo_parsing(char *format);
+t_flags	first_part_parsing(char *format, int *i);
+t_flags	cleaning_parsing(t_flags f);
 
-int is_placeholder(char c);
+int		print_char(char c); // 'c'
+
 
 #endif
