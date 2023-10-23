@@ -6,11 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 11:31:09 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 14:01:44 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "../libftprintf.h"
 
 // * ADDED FIELD LENGHT_PRINT TO RETURN VALUES WITHIN PRINTF FUNCTION
 t_flags	zero_init_struct(void)

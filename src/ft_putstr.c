@@ -1,59 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_1.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 14:03:43 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/23 13:53:04 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/23 13:53:39 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-int	width_or_precision(char *s)
+void	ft_putchar(char c)
 {
-	int	i;
-	int	result;
-
-	i = 0;
-	result = 0;
-	while (ft_isdigit(s[i]))
-	{
-		result = (10 * result) + (s[i] + 48);
-		i++;
-	}
-	return (result);
+	write(1, &c, 1);
 }
 
-void	print_width_space(int nb)
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (i < nb)
+	while (str[i] != '\0')
 	{
-		ft_putchar(' ');
+		ft_putchar(str[i]);
 		i++;
 	}
-}
-
-void	print_width_zero(int nb)
-{
-	int	i;
-
-	i = 0;
-	while (i < nb)
-	{
-		ft_putchar('0');
-		i++;
-	}
-}
-
-int	pos_width(int width, int lenght)
-{
-	if (width < lenght)
-		return (0);
-	return (width - lenght);
 }
