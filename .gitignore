@@ -20,6 +20,7 @@
 *.lib
 *.la
 *.lo
+*.a
 
 # Shared objects (inc. Windows DLLs)
 *.dll
@@ -64,4 +65,3 @@ Makefile copy
 test
 sujet_ft_printf.pdf
 ft_printf_tester/
-libftprintf.a

@@ -6,19 +6,19 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 13:58:28 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 14:12:44 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-static int	no_width(char *str)
+int	no_width(char *str)
 {
 	ft_putstr(str);
 	return (ft_strlen(str));
 }
 
-static int	yes_width(char *str, t_flags flags)
+int	yes_width(char *str, t_flags flags)
 {
 	if (flags.minus_sign)
 	{
@@ -33,7 +33,7 @@ static int	yes_width(char *str, t_flags flags)
 	return (6 + pos_width(flags.width, ft_strlen(str)));
 }
 
-static int	empty_string(char *nul_str, t_flags flags)
+int	empty_string(char *nul_str, t_flags flags)
 {
 	if (flags.point && flags.precision < 6)
 	{
