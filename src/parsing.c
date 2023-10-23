@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 14:01:44 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 14:08:03 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_flags	cleaning_parsing(t_flags f)
 	return (f);
 }
 
-t_flags	first_part_parsing(char *format, int *i)
+t_flags	first_part_parsing(const char *format, int *i)
 {
 	t_flags	current_flag;
 
@@ -71,7 +71,7 @@ t_flags	first_part_parsing(char *format, int *i)
 	return (current_flag);
 }
 
-t_flags	turbo_parsing(char *format)
+t_flags	turbo_parsing(const char *format)
 {
 	t_flags	current_flag;
 	int		i;
