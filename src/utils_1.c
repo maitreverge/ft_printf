@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/22 12:14:02 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:08:00 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,11 @@ void	print_width_zero(int nb)
 		ft_putchar('0');
 		i++;
 	}
+}
+
+int	pos_width(int width, int lenght)
+{
+	if (width < lenght)
+		return (0);
+	return (width - lenght);
 }

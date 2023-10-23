@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/23 10:55:13 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 12:42:36 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,33 @@ typedef struct s_flags {
 	int		space;
 	int		minus_sign;
 	int		zero;
-	int		point;
 	int		width;
+	int		point;
 	int		precision;
+	int		lenght_print;
 }	t_flags;
 
 int		ft_printf(const char *format, ...);
 
+// parsing functions
 t_flags	turbo_parsing(char *format);
 t_flags	zero_init_struct(void);
 t_flags	first_part_parsing(char *format, int *i);
 t_flags	cleaning_parsing(t_flags f);
 
+// %c
 int		print_char(char c, t_flags flags);
 
+// %s
+int		print_string(char *str, t_flags flags);
+
+static int	empty_string(char *nul_str, t_flags flags);
+static int	no_width(char *nul_str, t_flags flags);
+static int	yes_width(char *nul_str, t_flags flags);
+
+// utils
 void	print_width_space(int nb);
 void	print_width_zero(int nb);
+int		pos_width(int width, int lenght);
 
 #endif
