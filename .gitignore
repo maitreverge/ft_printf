@@ -64,3 +64,4 @@ Makefile copy
 test
 sujet_ft_printf.pdf
 ft_printf_tester/
+libftprintf.a
