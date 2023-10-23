@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 10:57:00 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 11:00:28 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,98 +24,7 @@ int	print_string(char *str, t_flags flags)
 				return (0);
 			else
 			{
-				
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{.width);.width);
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{.width);
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{.width);
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{.width);
-			}
-		}
-		if (flags.point && flags.precision >= 6)
-		{
-			if (!flags.width)
-			{
-				ft_putstr("(null)");
-				return (6);
-			}
-			else
-			{
-				if (flags.minus_sign)
-				{_width_space(flags.width);
+				print_width_space(flags.width);
 				return (flags.width);
 			}
 		}
@@ -141,6 +50,10 @@ int	print_string(char *str, t_flags flags)
 				if (flags.width > 6)
 					return ();
 			}
+		}
+	}
+	len_str = ft_strlen(str);
+}
 		}
 	}
 	len_str = ft_strlen(str);
