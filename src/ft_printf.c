@@ -6,13 +6,13 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 14:06:38 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 14:48:02 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-static int	placeholder_behaviour(t_flags flags, va_list args)
+int	placeholder_behaviour(t_flags flags, va_list args)
 {
 	int	result;
 

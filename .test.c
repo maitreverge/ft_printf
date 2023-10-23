@@ -6,11 +6,12 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by nope              #+#    #+#             */
-/*   Updated: 2023/10/21 13:19:12 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 14:59:31 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+#include "lib/libft.h"
 #include <string.h>
 #include <stdio.h>
 

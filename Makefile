@@ -6,7 +6,7 @@
 #    By: flverge <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 17:21:33 by nope              #+#    #+#              #
-#    Updated: 2023/10/23 13:46:18 by flverge          ###   ########.fr        #
+#    Updated: 2023/10/23 14:43:47 by flverge          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,5 +34,8 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+
+bonus:
+	make all
 
 re: fclean all
