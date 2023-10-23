@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/22 12:15:36 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/23 10:55:13 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <stdlib.h> // malloc ses grands morts
 # include <stdarg.h> // va_arg
 
-
 // 9 fields
 typedef struct s_flags {
 	char	placeholder;
@@ -37,7 +36,6 @@ typedef struct s_flags {
 	int		precision;
 }	t_flags;
 
-
 int		ft_printf(const char *format, ...);
 
 t_flags	turbo_parsing(char *format);
@@ -49,6 +47,5 @@ int		print_char(char c, t_flags flags);
 
 void	print_width_space(int nb);
 void	print_width_zero(int nb);
-
 
 #endif
