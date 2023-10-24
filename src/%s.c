@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 15:25:48 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:29:20 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	print_string(char *str, t_flags flags)
 		flags.lenght_print = no_width(str);
 	else
 		flags.lenght_print = yes_width(str, flags);
-	if (need_free > 0)
+	if (need_free)
 		free(str);
 	return (flags.lenght_print);
 }
