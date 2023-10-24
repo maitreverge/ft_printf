@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 14:12:44 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 14:44:28 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	yes_width(char *str, t_flags flags)
 		print_width_space(flags.width - ft_strlen(str));
 		ft_putstr(str);
 	}
-	return (6 + pos_width(flags.width, ft_strlen(str)));
+	return (ft_strlen(str) + pos_width(flags.width, ft_strlen(str)));
 }
 
 int	empty_string(char *nul_str, t_flags flags)
@@ -65,7 +65,7 @@ int	print_string(char *str, t_flags flags)
 {
 	if (!str)
 		return (empty_string("(null)", flags));
-	if (flags.point && (flags.precision < ft_strlen(str)))
+	if (flags.point && (flags.precision < (int)ft_strlen(str)))
 		str[flags.precision] = '\0';
 	if (!flags.width)
 		flags.lenght_print = no_width(str);

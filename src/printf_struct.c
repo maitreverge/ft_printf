@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:55:53 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 11:03:11 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 14:33:24 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	print_struct(t_flags s)
 	printf("zero = %i\n---\n", s.zero);
 	printf("point = %i\n---\n", s.point);
 	printf("width = %i\n---\n", s.width);
-	printf("precision = %li\n---\n", s.precision);
+	printf("precision = %i\n---\n", s.precision);
 }

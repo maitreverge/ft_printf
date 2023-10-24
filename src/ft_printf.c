@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 13:31:29 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 14:37:38 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,13 @@ int	ft_printf(const char *format, ...)
 		{
 			current_flag = turbo_parsing(&format[i + 1]);
 			len_printf += placeholder_behaviour(current_flag, args);
-			i += count_flags(current_flag);
 		}
 		else
 		{
 			ft_putchar(format[i]);
 			len_printf++;
 		}
-		i++;
+		i += count_flags(current_flag);
 	}
 	va_end(args);
 	return (len_printf);
