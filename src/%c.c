@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 16:47:00 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 10:59:33 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 11:13:17 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	print_char(char c, t_flags flags)
 {
-	print_struct(flags);
 	if (flags.width > 1 && c != '%')
 	{
 		if (!flags.minus_sign)
@@ -29,6 +28,7 @@ int	print_char(char c, t_flags flags)
 		}
 		return (flags.width);
 	}
+	// print_struct(flags);
 	ft_putchar(c);
 	return (1);
 }

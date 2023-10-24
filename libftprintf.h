@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/24 11:00:23 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 11:27:25 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		no_width(char *nul_str);
 int		yes_width(char *nul_str, t_flags flags);
 
 // utils
-int		width_or_precision(const char *s);
+int	width_or_precision(const char *s, int *i);
 void	print_width_space(int nb);
 void	print_width_zero(int nb);
 int		pos_width(int width, int lenght);

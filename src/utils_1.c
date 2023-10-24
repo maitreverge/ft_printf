@@ -6,23 +6,21 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 10:40:32 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 11:27:09 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-int	width_or_precision(const char *s)
+int	width_or_precision(const char *s, int *i)
 {
-	int	i;
 	int	result;
 
-	i = 0;
 	result = 0;
-	while (ft_isdigit(s[i]))
+	while (ft_isdigit(s[*i]))
 	{
-		result = (10 * result) + (s[i] - 48);
-		i++;
+		result = (10 * result) + (s[*i] - 48);
+		(*i)++;
 	}
 	return (result);
 }
