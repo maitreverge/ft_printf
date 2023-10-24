@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 10:53:35 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 13:08:19 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,10 +178,10 @@ int	main(void)
 	displayTestSeparator("BONUS CHAR", 96);
 
 	headings(1);
-	v_printf = printf("[%9c]", 'A');
+	v_printf = printf("[%2c]", 'A');
 	bn();
 	headings(2);
-	v_ftprintf = ft_printf("[%9c]", 'A');
+	v_ftprintf = ft_printf("[%2c]", 'A');
 	bn();
 	return_values(v_printf, v_ftprintf);
 	
@@ -190,10 +190,10 @@ int	main(void)
 	displayTestSeparator("BONUS CHAR", 96);
 
 	headings(1);
-	v_printf = printf("[%-12c]", 'A');
+	v_printf = printf("[%-2c]", 'A');
 	bn();
 	headings(2);
-	v_ftprintf = ft_printf("[%-12c]", 'A');
+	v_ftprintf = ft_printf("[%-2c]", 'A');
 	bn();
 	return_values(v_printf, v_ftprintf);
 
