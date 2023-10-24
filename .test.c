@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 13:08:19 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 13:55:09 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,70 +197,318 @@ int	main(void)
 	bn();
 	return_values(v_printf, v_ftprintf);
 
+			// * TEST CHAR BONUSES 3
 
+	displayTestSeparator("BONUS CHAR", 96);
 
-
-	// // * TEST 5
+	headings(1);
+	v_printf = printf("[%1c]", 'A');
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%1c]", 'A');
+	bn();
+	return_values(v_printf, v_ftprintf);
 	
-	// displayTestSeparator("test string", 92);
-
-	// headings(1);
-	// v_printf = printf("Test string : %s", "Hello, World !");
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("Test string : %s", "Hello, World !");
-	// bn();
-
-	// return_values(v_printf, v_ftprintf);
-
-
-
-	// // * TEST 6
 	
-	// displayTestSeparator("test multiple strings", 92);
+	// * TEST CHAR BONUSES 4
+
+	displayTestSeparator("BONUS CHAR", 96);
+
+	headings(1);
+	v_printf = printf("[%-1c]", 'A');
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-1c]", 'A');
+	bn();
+	return_values(v_printf, v_ftprintf);
+
 	
-	// char str[] = "thIs senTence ouTput iS SUPosED to Be alL CAps";
+
+	// ! END BONUS CHAR
+
+
+
+
+	// * TEST 5
 	
-	// headings(1);
-	// v_printf = printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
-	// bn();
+	displayTestSeparator("test string", 92);
 
-	// return_values(v_printf, v_ftprintf);
+	headings(1);
+	v_printf = printf("Test string : %s", "Hello, World !");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("Test string : %s", "Hello, World !");
+	bn();
+
+	return_values(v_printf, v_ftprintf);
 
 
 
-	// // * TEST 7
+	// * TEST 6
 	
-	// displayTestSeparator("combo_previous placeholders", 92);
-
-	// headings(1);
-	// v_printf = printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
-	// bn();
-
-	// return_values(v_printf, v_ftprintf);
-
-
-
-	// // * TEST 8
+	displayTestSeparator("test multiple strings", 92);
 	
-	// displayTestSeparator("Test empty string", 92);
+	char str[] = "thIs senTence ouTput iS SUPosED to Be alL CAps";
+	
+	headings(1);
+	v_printf = printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
+	bn();
 
-	// char *empty = NULL;
+	return_values(v_printf, v_ftprintf);
 
-	// headings(1);
-	// v_printf = printf("String = %s", empty);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("String = %s", empty);
-	// bn();
 
-	// return_values(v_printf, v_ftprintf);
+
+	// * TEST 7
+	
+	displayTestSeparator("combo_previous placeholders", 92);
+
+	headings(1);
+	v_printf = printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
+	bn();
+
+	return_values(v_printf, v_ftprintf);
+
+
+
+	// * TEST 8
+	
+	displayTestSeparator("Test empty string", 92);
+
+	char *empty = NULL;
+
+	headings(1);
+	v_printf = printf("String = %s", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("String = %s", empty);
+	bn();
+
+	return_values(v_printf, v_ftprintf);
+
+
+
+	// ! BONUS STRINGS
+
+
+	
+
+		// * TEST CHAR BONUSES 1_2 (full string)
+
+	displayTestSeparator("BONUS STRING", 92);
+
+	headings(1);
+	v_printf = printf("[%12s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%12s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+
+	
+	headings(1);
+	v_printf = printf("[%-12s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-12s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%.5s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.5s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%.6s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.6s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%.4s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.4s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%4.4s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%4.4s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%5.4s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%5.4s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%6.4s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%6.4s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%-6.4s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-6.4s]", "Salut");
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	
+
+
+		// * TEST CHAR BONUSES 2_2 (empty string)
+
+
+		
+
+	displayTestSeparator("BONUS STRING", 92);
+
+	headings(1);
+	v_printf = printf("[%12s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%12s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+
+	
+	headings(1);
+	v_printf = printf("[%-12s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-12s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%.5s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.5s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%.6s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.6s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%.4s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.4s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%4.4s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%4.4s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%5.4s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%5.4s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%6.4s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%6.4s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+	displayTestSeparator("BONUS STRING", 92);
+	
+	headings(1);
+	v_printf = printf("[%-6.4s]", empty);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-6.4s]", empty);
+	return_values(v_printf, v_ftprintf);
+	bn();
+
+
+
+
+
+
+	
+	// v_printf = printf("[%-12s]", "Salut");
+	// v_printf = printf("[%.5s]", "Salut");
+	// v_printf = printf("[%.6s]", "Salut");
+	// v_printf = printf("[%.4s]", "Salut");
+	// v_printf = printf("[%4.4s]", "Salut");
+	// v_printf = printf("[%5.4s]", "Salut");
+	// v_printf = printf("[%6.4s]", "Salut");
+	// v_printf = printf("[%-6.4s]", "Salut");
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%s]", 'A');
+	bn();
+	return_values(v_printf, v_ftprintf);
 
 	// 	// * TEST 9
 	
