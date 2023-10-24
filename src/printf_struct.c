@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   %c.c                                               :+:      :+:    :+:   */
+/*   printf_struct.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 16:47:00 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 10:59:33 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/24 10:55:53 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/24 10:55:54 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-int	print_char(char c, t_flags flags)
+void	print_struct(t_flags s)
 {
-	print_struct(flags);
-	if (flags.width > 1 && c != '%')
-	{
-		if (!flags.minus_sign)
-		{
-			print_width_space(flags.width - 1);
-			ft_putchar(c);
-		}
-		else
-		{
-			ft_putchar(c);
-			print_width_space(flags.width - 1);
-		}
-		return (flags.width);
-	}
-	ft_putchar(c);
-	return (1);
+	printf("placeholder = %c\n---\n", s.placeholder);
+	printf("hashtag = %i\n---\n", s.hashtag);
+	printf("plus_sign = %i\n---\n", s.plus_sign);
+	printf("space = %i\n---\n", s.space);
+	printf("minus_sign = %i\n---\n", s.minus_sign);
+	printf("zero = %i\n---\n", s.zero);
+	printf("point = %i\n---\n", s.point);
+	printf("width = %li\n---\n", s.width);
+	printf("precision = %li\n---\n", s.precision);
 }

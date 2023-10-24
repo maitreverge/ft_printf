@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/24 09:59:24 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 11:00:23 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "lib/libft.h"
+# include <stdio.h>
 
 // 10 fields
 typedef struct s_flags {
@@ -61,5 +62,6 @@ void	print_width_zero(int nb);
 int		pos_width(int width, int lenght);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	print_struct(t_flags s);
 
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/09 12:22:09 by nope              #+#    #+#             */
-/*   Updated: 2023/10/24 09:53:04 by flverge          ###   ########.fr       */
+/*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/24 10:53:35 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 #include "lib/libft.h"
 #include <string.h>
 #include <stdio.h>
+// #include "lib/libft.a"
+// #include "src/%c.c"
+// #include "src/%s.c"
+// #include "src/ft_printf.c"
+// #include "src/ft_putstr.c"
+// #include "src/parsing.c"
+// #include "src/utils_1.c"
+
 
 void	bn(void)
 {
@@ -81,6 +89,20 @@ int	test_int(int nb)
 		return ((nb + 1));
 }
 
+// void	print_struct(t_flags s)
+// {
+// 	printf("placeholder = %c\n---\n", s.placeholder);
+// 	printf("hashtag = %i\n---\n", s.hashtag);
+// 	printf("plus_sign = %i\n---\n", s.plus_sign);
+// 	printf("space = %i\n---\n", s.space);
+// 	printf("minus_sign = %i\n---\n", s.minus_sign);
+// 	printf("zero = %i\n---\n", s.zero);
+// 	printf("point = %i\n---\n", s.point);
+// 	printf("width = %i\n---\n", s.width);
+// 	printf("precision = %li\n---\n", s.precision);
+
+// }
+
 int	main(void)
 {
 	// return values of both printf and ft_printf
@@ -88,7 +110,7 @@ int	main(void)
 	int	v_ftprintf = 0;
 	
 
-	// * TEST 1
+	// * TEST 1	
 	
 	displayTestSeparator("test simple string", 93);
 	
@@ -143,6 +165,38 @@ int	main(void)
 	v_ftprintf = ft_printf("Test char : %c-%c-%c-%c %%", test_char('X'), 'M', value_1, 'A');
 	bn();
 	return_values(v_printf, v_ftprintf);
+
+	
+
+	// ! BONUS CHAR
+
+
+	
+
+		// * TEST CHAR BONUSES 1
+
+	displayTestSeparator("BONUS CHAR", 96);
+
+	headings(1);
+	v_printf = printf("[%9c]", 'A');
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%9c]", 'A');
+	bn();
+	return_values(v_printf, v_ftprintf);
+	
+	// * TEST CHAR BONUSES 2
+
+	displayTestSeparator("BONUS CHAR", 96);
+
+	headings(1);
+	v_printf = printf("[%-12c]", 'A');
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-12c]", 'A');
+	bn();
+	return_values(v_printf, v_ftprintf);
+
 
 
 
