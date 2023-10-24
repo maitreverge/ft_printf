@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 14:08:03 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:59:41 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,14 @@ t_flags	first_part_parsing(const char *format, int *i)
 	return (current_flag);
 }
 
+int	check_placeholder(char c)
+{
+	if (c == '%' || c == 'c' || c == 's' || c == 'p' || c == 'd'
+		|| c == 'i' || c == 'u' || c == 'x' || c == 'X')
+		return (1);
+	return (0);
+}
+
 t_flags	turbo_parsing(const char *format)
 {
 	t_flags	current_flag;
@@ -78,9 +86,9 @@ t_flags	turbo_parsing(const char *format)
 
 	current_flag = zero_init_struct();
 	i = 0;
-	if (format[i] == '%')
+	if (check_placeholder(format[i]) == 1)
 	{
-		current_flag.placeholder = '%';
+		current_flag.placeholder = format[i];
 		return (current_flag);
 	}
 	current_flag = first_part_parsing(&format[i], &i);

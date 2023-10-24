@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/23 14:48:35 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:59:24 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_flags	turbo_parsing(const char *format);
 t_flags	zero_init_struct(void);
 t_flags	first_part_parsing(const char *format, int *i);
 t_flags	cleaning_parsing(t_flags f);
+int		check_placeholder(char c);
 
 // %c
 int		print_char(char c, t_flags flags);

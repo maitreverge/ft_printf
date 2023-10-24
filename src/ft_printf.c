@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/23 14:48:02 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:54:23 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	i = 0;
 	len_printf = 0;
-	while (format[i++])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
@@ -49,6 +49,7 @@ int	ft_printf(const char *format, ...)
 			ft_putchar(format[i]);
 			len_printf++;
 		}
+		i++;
 	}
 	va_end(args);
 	return (len_printf);

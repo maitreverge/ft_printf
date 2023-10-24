@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by nope              #+#    #+#             */
-/*   Updated: 2023/10/23 14:59:31 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 09:53:04 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,398 +146,398 @@ int	main(void)
 
 
 
-	// * TEST 5
+	// // * TEST 5
 	
-	displayTestSeparator("test string", 92);
+	// displayTestSeparator("test string", 92);
 
-	headings(1);
-	v_printf = printf("Test string : %s", "Hello, World !");
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("Test string : %s", "Hello, World !");
-	bn();
+	// headings(1);
+	// v_printf = printf("Test string : %s", "Hello, World !");
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("Test string : %s", "Hello, World !");
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
 
 
-	// * TEST 6
+	// // * TEST 6
 	
-	displayTestSeparator("test multiple strings", 92);
+	// displayTestSeparator("test multiple strings", 92);
 	
-	char str[] = "thIs senTence ouTput iS SUPosED to Be alL CAps";
+	// char str[] = "thIs senTence ouTput iS SUPosED to Be alL CAps";
 	
-	headings(1);
-	v_printf = printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
-	bn();
+	// headings(1);
+	// v_printf = printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("Test string : %s\n%s\n%s", "Hello, World !", "Life is potatoes", test_string(str));
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
 
 
-	// * TEST 7
+	// // * TEST 7
 	
-	displayTestSeparator("combo_previous placeholders", 92);
+	// displayTestSeparator("combo_previous placeholders", 92);
 
-	headings(1);
-	v_printf = printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
-	bn();
+	// headings(1);
+	// v_printf = printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("String = %s__char : %c.___%%%%%%", "Hello, World !", 'C');
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
 
 
-	// * TEST 8
+	// // * TEST 8
 	
-	displayTestSeparator("Test empty string", 92);
+	// displayTestSeparator("Test empty string", 92);
 
-	char *empty = NULL;
+	// char *empty = NULL;
 
-	headings(1);
-	v_printf = printf("String = %s", empty);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("String = %s", empty);
-	bn();
+	// headings(1);
+	// v_printf = printf("String = %s", empty);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("String = %s", empty);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 9
+	// 	// * TEST 9
 	
-	displayTestSeparator("Test %p adresses", 91);
+	// displayTestSeparator("Test %p adresses", 91);
 
-	char *pointer_test = "test";
+	// char *pointer_test = "test";
 
-	headings(1);
-	v_printf = printf("Adress = %p", &pointer_test);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("Adress = %p", &pointer_test);
-	bn();
+	// headings(1);
+	// v_printf = printf("Adress = %p", &pointer_test);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("Adress = %p", &pointer_test);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 10
+	// 	// * TEST 10
 	
-	displayTestSeparator("Test empty adress", 91);
+	// displayTestSeparator("Test empty adress", 91);
 
-	headings(1);
-	v_printf = printf("Adress = %p", (void*)-1);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("Adress = %p", (void*)-1);
-	bn();
+	// headings(1);
+	// v_printf = printf("Adress = %p", (void*)-1);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("Adress = %p", (void*)-1);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 11
-	displayTestSeparator("Test null", 91);
+	// 	// * TEST 11
+	// displayTestSeparator("Test null", 91);
 
-	headings(1);
-	v_printf = printf("Adress = %p", 0);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("Adress = %p", 0);
-	bn();
+	// headings(1);
+	// v_printf = printf("Adress = %p", 0);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("Adress = %p", 0);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 12
-	displayTestSeparator("Test %u positive int", 95);
+	// 	// * TEST 12
+	// displayTestSeparator("Test %u positive int", 95);
 
-	headings(1);
-	v_printf = printf("%u", 42);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%u", 42);
-	bn();
+	// headings(1);
+	// v_printf = printf("%u", 42);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%u", 42);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 13
+	// // * TEST 13
 
-	displayTestSeparator("Test %u int_max", 95);
+	// displayTestSeparator("Test %u int_max", 95);
 
-	headings(1);
-	v_printf = printf("%u", FT_INT_MAX);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%u", FT_INT_MAX);
-	bn();
+	// headings(1);
+	// v_printf = printf("%u", FT_INT_MAX);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%u", FT_INT_MAX);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
 
-	// * TEST 14
+	// // * TEST 14
 
-	displayTestSeparator("Test %u null int", 95);
+	// displayTestSeparator("Test %u null int", 95);
 
-	headings(1);
-	v_printf = printf("%u", 0);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%u", 0);
-	bn();
+	// headings(1);
+	// v_printf = printf("%u", 0);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%u", 0);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 15
+	// // * TEST 15
 
-	displayTestSeparator("Test %u return ft int", 95);
+	// displayTestSeparator("Test %u return ft int", 95);
 
-	headings(1);
-	v_printf = printf("%u", test_unsigned_int(42));
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%u", test_unsigned_int(42));
-	bn();
+	// headings(1);
+	// v_printf = printf("%u", test_unsigned_int(42));
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%u", test_unsigned_int(42));
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 16
+	// // * TEST 16
 
-	displayTestSeparator("Test %u beyond int max", 95);
+	// displayTestSeparator("Test %u beyond int max", 95);
 
-	headings(1);
-	v_printf = printf("%u", 2148000000);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%u", 2148000000);
-	bn();
+	// headings(1);
+	// v_printf = printf("%u", 2148000000);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%u", 2148000000);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 17
+	// // * TEST 17
 
-	displayTestSeparator("Test %i int positive", 92);
+	// displayTestSeparator("Test %i int positive", 92);
 
-	headings(1);
-	v_printf = printf("%i", 42);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%i", 42);
-	bn();
+	// headings(1);
+	// v_printf = printf("%i", 42);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%i", 42);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 18
+	// // * TEST 18
 
-	displayTestSeparator("Test %i int negative", 92);
+	// displayTestSeparator("Test %i int negative", 92);
 
-	headings(1);
-	v_printf = printf("%i", -42);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%i", -42);
-	bn();
+	// headings(1);
+	// v_printf = printf("%i", -42);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%i", -42);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 19
+	// // * TEST 19
 
-	displayTestSeparator("Test %i int null", 92);
+	// displayTestSeparator("Test %i int null", 92);
 
-	headings(1);
-	v_printf = printf("%i", 0);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%i", 0);
-	bn();
+	// headings(1);
+	// v_printf = printf("%i", 0);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%i", 0);
+	// bn();
 
-	return_values(v_printf, v_ftprintf);
-
-	
-	// * TEST 20
-
-	displayTestSeparator("Test %i int max", 92);
-
-	headings(1);
-	v_printf = printf("%i", FT_INT_MAX);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%i", FT_INT_MAX);
-
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
 	
-	// * TEST 21
+	// // * TEST 20
 
-	displayTestSeparator("Test %i int min", 92);
+	// displayTestSeparator("Test %i int max", 92);
 
-	headings(1);
-	v_printf = printf("%i", FT_INT_MIN);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%i", FT_INT_MIN);
+	// headings(1);
+	// v_printf = printf("%i", FT_INT_MAX);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%i", FT_INT_MAX);
 
-	return_values(v_printf, v_ftprintf);
-
-	// * TEST 22
-
-	displayTestSeparator("Test %i int multiples", 92);
-
-	headings(1);
-	v_printf = printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
-	
-	return_values(v_printf, v_ftprintf);
-
-	////////////////////////////////
+	// return_values(v_printf, v_ftprintf);
 
 	
-	// * TEST 23
+	// // * TEST 21
 
-	displayTestSeparator("Test %x hexa number", 96);
+	// displayTestSeparator("Test %i int min", 92);
 
-	headings(1);
-	v_printf = printf("%x", 4251);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%x", 4251);
+	// headings(1);
+	// v_printf = printf("%i", FT_INT_MIN);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%i", FT_INT_MIN);
+
+	// return_values(v_printf, v_ftprintf);
+
+	// // * TEST 22
+
+	// displayTestSeparator("Test %i int multiples", 92);
+
+	// headings(1);
+	// v_printf = printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 24
+	// ////////////////////////////////
 
-	displayTestSeparator("Test %x other value hexa number", 96);
-
-	headings(1);
-	v_printf = printf("%x", 10);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%x", 10);
 	
-	return_values(v_printf, v_ftprintf);
+	// // * TEST 23
 
-		// * TEST 25
+	// displayTestSeparator("Test %x hexa number", 96);
 
-	displayTestSeparator("Test %x null hexa number", 96);
-
-	headings(1);
-	v_printf = printf("%x", 0);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%x", 0);
+	// headings(1);
+	// v_printf = printf("%x", 4251);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%x", 4251);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 26
+	// // * TEST 24
 
-	displayTestSeparator("Test %x int_max hexa number", 96);
+	// displayTestSeparator("Test %x other value hexa number", 96);
 
-	headings(1);
-	v_printf = printf("%x", FT_INT_MAX);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%x", FT_INT_MAX);
+	// headings(1);
+	// v_printf = printf("%x", 10);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%x", 10);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
+	// 	// * TEST 25
 
-		// * TEST 27.1
+	// displayTestSeparator("Test %x null hexa number", 96);
 
-	displayTestSeparator("Test %x shitty hexa number", 96);
-
-	headings(1);
-	v_printf = printf("%x", 3735929054u);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%x", 3735929054u);
+	// headings(1);
+	// v_printf = printf("%x", 0);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%x", 0);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 27.2
+	// 	// * TEST 26
 
-	displayTestSeparator("Test %x neg hexa number", 96);
+	// displayTestSeparator("Test %x int_max hexa number", 96);
 
-	headings(1);
-	v_printf = printf("%x", -1);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%x", -1);
+	// headings(1);
+	// v_printf = printf("%x", FT_INT_MAX);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%x", FT_INT_MAX);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	/////////////////////////////
 
-	// * TEST 28
+	// 	// * TEST 27.1
 
-	displayTestSeparator("Test %X hexa number", 93);
+	// displayTestSeparator("Test %x shitty hexa number", 96);
 
-	headings(1);
-	v_printf = printf("%X", 4251);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%X", 4251);
+	// headings(1);
+	// v_printf = printf("%x", 3735929054u);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%x", 3735929054u);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-	// * TEST 29
+	// 	// * TEST 27.2
 
-	displayTestSeparator("Test %X other hexa number", 93);
+	// displayTestSeparator("Test %x neg hexa number", 96);
 
-	headings(1);
-	v_printf = printf("%X", 10);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%X", 10);
+	// headings(1);
+	// v_printf = printf("%x", -1);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%x", -1);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 30
+	// /////////////////////////////
 
-	displayTestSeparator("Test %X null hexa number", 93);
+	// // * TEST 28
 
-	headings(1);
-	v_printf = printf("%X", 0);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%X", 0);
+	// displayTestSeparator("Test %X hexa number", 93);
+
+	// headings(1);
+	// v_printf = printf("%X", 4251);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%X", 4251);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 31
+	// // * TEST 29
 
-	displayTestSeparator("Test %X int_max hexa number", 93);
+	// displayTestSeparator("Test %X other hexa number", 93);
 
-	headings(1);
-	v_printf = printf("%X", FT_INT_MAX);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%X", FT_INT_MAX);
+	// headings(1);
+	// v_printf = printf("%X", 10);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%X", 10);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
+	// 	// * TEST 30
 
-		// * TEST 32.1
+	// displayTestSeparator("Test %X null hexa number", 93);
 
-	displayTestSeparator("Test %X shitty hexa number", 93);
-
-	headings(1);
-	v_printf = printf("%X", 3735929054u);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%X", 3735929054u);
+	// headings(1);
+	// v_printf = printf("%X", 0);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%X", 0);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
 
-		// * TEST 32.2
+	// 	// * TEST 31
 
-	displayTestSeparator("Test %X shitty hexa number", 93);
+	// displayTestSeparator("Test %X int_max hexa number", 93);
 
-	headings(1);
-	v_printf = printf("%X", -1);
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("%X", -1);
+	// headings(1);
+	// v_printf = printf("%X", FT_INT_MAX);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%X", FT_INT_MAX);
 	
-	return_values(v_printf, v_ftprintf);
+	// return_values(v_printf, v_ftprintf);
+
+
+	// 	// * TEST 32.1
+
+	// displayTestSeparator("Test %X shitty hexa number", 93);
+
+	// headings(1);
+	// v_printf = printf("%X", 3735929054u);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%X", 3735929054u);
+	
+	// return_values(v_printf, v_ftprintf);
+
+	// 	// * TEST 32.2
+
+	// displayTestSeparator("Test %X shitty hexa number", 93);
+
+	// headings(1);
+	// v_printf = printf("%X", -1);
+	// bn();
+	// headings(2);
+	// v_ftprintf = ft_printf("%X", -1);
+	
+	// return_values(v_printf, v_ftprintf);
 }
