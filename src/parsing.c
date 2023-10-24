@@ -6,13 +6,12 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 11:28:10 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 13:01:47 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libftprintf.h"
 
-// * ADDED FIELD LENGHT_PRINT TO RETURN VALUES WITHIN PRINTF FUNCTION
 t_flags	zero_init_struct(void)
 {
 	t_flags	f;
@@ -30,7 +29,6 @@ t_flags	zero_init_struct(void)
 	return (f);
 }
 
-// ! add potentials more clashing fields
 t_flags	cleaning_parsing(t_flags f)
 {
 	if (f.plus_sign >= 1 && f.space >= 1)
@@ -57,7 +55,8 @@ t_flags	first_part_parsing(const char *format, int *i)
 {
 	t_flags	current_flag;
 
-	while (!ft_isdigit(format[(*i)++]))
+	current_flag = zero_init_struct();
+	while (!ft_isdigit(format[*i]))
 	{
 		if (format[*i] == '#')
 			current_flag.hashtag++;
@@ -67,6 +66,7 @@ t_flags	first_part_parsing(const char *format, int *i)
 			current_flag.plus_sign++;
 		else if (format[*i] == '-')
 			current_flag.minus_sign++;
+		(*i)++;
 	}
 	return (current_flag);
 }
@@ -92,14 +92,28 @@ t_flags	turbo_parsing(const char *format)
 		return (current_flag);
 	}
 	current_flag = first_part_parsing(&format[i], &i);
-	while (format[i++] == '0')
+	while (format[i] == '0')
+	{
 		current_flag.zero++;
+		i++;
+	}
 	if (format[i] != '.' && ft_isdigit(format[i]))
-		current_flag.width = width_or_precision(&format[i], &i);
-	while (format[i++] == '.')
+	{
+		current_flag.width = width_or_precision(&format[i]);
+		while (ft_isdigit(format[i]))
+			i++;
+	}
+	while (format[i] == '.')
+	{
 		current_flag.point++;
+		i++;
+	}
 	if (current_flag.point >= 1 && ft_isdigit(format[i]))
-		current_flag.precision = width_or_precision(&format[i], &i);
+	{
+		current_flag.precision = width_or_precision(&format[i]);
+		while (ft_isdigit(format[i]))
+			i++;
+	}
 	current_flag.placeholder = format[i];
 	current_flag = cleaning_parsing(current_flag);
 	return (current_flag);
