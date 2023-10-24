@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 13:01:47 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:01:40 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ t_flags	turbo_parsing(const char *format)
 		current_flag.placeholder = format[i];
 		return (current_flag);
 	}
-	current_flag = first_part_parsing(&format[i], &i);
+	if (format[i] != '.')
+		current_flag = first_part_parsing(&format[i], &i);
 	while (format[i] == '0')
 	{
 		current_flag.zero++;
@@ -108,7 +109,7 @@ t_flags	turbo_parsing(const char *format)
 		current_flag.point++;
 		i++;
 	}
-	if (current_flag.point >= 1 && ft_isdigit(format[i]))
+	if (current_flag.point && ft_isdigit(format[i]))
 	{
 		current_flag.precision = width_or_precision(&format[i]);
 		while (ft_isdigit(format[i]))

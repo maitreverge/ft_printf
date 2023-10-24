@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 14:44:28 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:02:20 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	print_string(char *str, t_flags flags)
 {
 	if (!str)
 		return (empty_string("(null)", flags));
+	// print_struct(flags);
 	if (flags.point && (flags.precision < (int)ft_strlen(str)))
 		str[flags.precision] = '\0';
 	if (!flags.width)
