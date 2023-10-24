@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/24 13:29:55 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:14:06 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ void	ft_putstr(char *str);
 void	print_struct(t_flags s);
 int		int_len(int n);
 int		count_flags(t_flags s);
+char	*ft_strndup(const char *s, size_t n);
 
 #endif

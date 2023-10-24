@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 14:17:39 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:27:06 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -403,7 +403,7 @@ int	main(void)
 
 		
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 10", 92);
 
 	headings(1);
 	v_printf = printf("[%12s]", empty);
@@ -413,7 +413,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 11", 92);
 
 	
 	headings(1);
@@ -424,7 +424,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 12", 92);
 	
 	headings(1);
 	v_printf = printf("[%.5s]", empty);
@@ -434,7 +434,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 13", 92);
 	
 	headings(1);
 	v_printf = printf("[%.6s]", empty);
@@ -444,7 +444,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 14", 92);
 	
 	headings(1);
 	v_printf = printf("[%.4s]", empty);
@@ -454,7 +454,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 15", 92);
 	
 	headings(1);
 	v_printf = printf("[%4.4s]", empty);
@@ -464,7 +464,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 16", 92);
 	
 	headings(1);
 	v_printf = printf("[%5.4s]", empty);
@@ -474,7 +474,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 17", 92);
 	
 	headings(1);
 	v_printf = printf("[%6.4s]", empty);
@@ -484,7 +484,7 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-	displayTestSeparator("BONUS STRING", 92);
+	displayTestSeparator("BONUS STRING 18", 92);
 	
 	headings(1);
 	v_printf = printf("[%-6.4s]", empty);
@@ -494,25 +494,6 @@ int	main(void)
 	return_values(v_printf, v_ftprintf);
 	bn();
 
-
-
-
-
-
-	
-	// v_printf = printf("[%-12s]", "Salut");
-	// v_printf = printf("[%.5s]", "Salut");
-	// v_printf = printf("[%.6s]", "Salut");
-	// v_printf = printf("[%.4s]", "Salut");
-	// v_printf = printf("[%4.4s]", "Salut");
-	// v_printf = printf("[%5.4s]", "Salut");
-	// v_printf = printf("[%6.4s]", "Salut");
-	// v_printf = printf("[%-6.4s]", "Salut");
-	bn();
-	headings(2);
-	v_ftprintf = ft_printf("[%s]", 'A');
-	bn();
-	return_values(v_printf, v_ftprintf);
 
 	// 	// * TEST 9
 	

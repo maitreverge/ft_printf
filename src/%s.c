@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/24 15:02:20 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:25:48 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,22 @@ int	empty_string(char *nul_str, t_flags flags)
 
 int	print_string(char *str, t_flags flags)
 {
+	int	need_free;
+	
+	need_free = 0;
 	if (!str)
 		return (empty_string("(null)", flags));
-	// print_struct(flags);
+	// fonctionne mais leak
 	if (flags.point && (flags.precision < (int)ft_strlen(str)))
-		str[flags.precision] = '\0';
+	{
+		str = ft_strndup(str, flags.precision); 
+		need_free++;
+	}
 	if (!flags.width)
 		flags.lenght_print = no_width(str);
 	else
 		flags.lenght_print = yes_width(str, flags);
+	if (need_free > 0)
+		free(str);
 	return (flags.lenght_print);
 }
