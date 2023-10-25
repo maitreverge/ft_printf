@@ -6,6 +6,7 @@ int main(void)
 	char c = 'A';
 	char *str = "Salut";
 	char *adress = "qwghtgtrefrg";
+	char *empty_adress = NULL;
 	int pos_int = 123;
 	int neg_int = -42;
 	int hexa = 0xdeadc0de;
@@ -13,11 +14,13 @@ int main(void)
 	int octal = 0337;
 
 
-	printf("[%-c]\n-----\n\n", c);
+	// printf("[%-c]\n-----\n\n", c);
 
 	// printf("[%-12.3s]\n-----\n\n", str);
 	
-	// printf("[%p]\n-----\n\n", adress);
+	printf("[%p]\n-----\n\n", adress);
+
+	printf("[%50p]\n-----\n\n", empty_adress);
 	
 	// printf("%d\n-----\n\n", pos_int);
 	

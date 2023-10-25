@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/25 14:13:26 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:24:50 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ int		yes_width(char *nul_str, t_flags flags);
 
 // %p
 int		print_adress(unsigned long nb, t_flags flags);
+int		yes_width_hexa(char *prefix, t_flags flags, unsigned long nb);
+int		empty_adress(char *nul_str, t_flags flags);
+void	putnbr_hexa_adress(unsigned long nb);
+int		intlen_hexa(unsigned long n);
+
 
 
 // utils

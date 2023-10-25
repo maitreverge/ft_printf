@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 13:59:01 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 16:53:51 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -517,45 +517,61 @@ int	main(void)
 	bn();
 
 
-	// 	// * TEST 9
+		// * TEST 9
 	
-	// displayTestSeparator("Test %p adresses", 91);
+	displayTestSeparator("Test %p adresses", 91);
 
-	// char *pointer_test = "test";
+	char *pointer_test = "test";
 
-	// headings(1);
-	// v_printf = printf("Adress = %p", &pointer_test);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("Adress = %p", &pointer_test);
-	// bn();
+	headings(1);
+	v_printf = printf("Adress = %p", &pointer_test);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("Adress = %p", &pointer_test);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// 	// * TEST 10
+		// * TEST 10
 	
-	// displayTestSeparator("Test empty adress", 91);
+	displayTestSeparator("Test empty adress", 91);
 
-	// headings(1);
-	// v_printf = printf("Adress = %p", (void*)-1);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("Adress = %p", (void*)-1);
-	// bn();
+	headings(1);
+	v_printf = printf("Adress = %p", (void*)-1);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("Adress = %p", (void*)-1);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// 	// * TEST 11
-	// displayTestSeparator("Test null", 91);
+		// * TEST 11
+	displayTestSeparator("Test null", 91);
 
-	// headings(1);
-	// v_printf = printf("Adress = %p", 0);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("Adress = %p", 0);
-	// bn();
+	headings(1);
+	v_printf = printf("Adress = %p", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("Adress = %p", 0);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
+
+	// ! BONUS %P
+
+	
+
+	displayTestSeparator("BONUS %P 1", 91);
+
+	headings(1);
+	v_printf = printf("Adress = %1p", &pointer_test);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("Adress = %1p", &pointer_test);
+	bn();
+	return_values(v_printf, v_ftprintf);
+
+	
 
 	// 	// * TEST 12
 	// displayTestSeparator("Test %u positive int", 95);
