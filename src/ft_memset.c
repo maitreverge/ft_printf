@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 15:19:32 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/03 14:01:34 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/02 15:20:34 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/25 12:14:33 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	while (lst)
+	size_t	i;
+
+	i = 0;
+	while (i < len)
 	{
-		if (!lst->next)
-			return (lst);
-		lst = lst->next;
+		((char *)b)[i] = c;
+		i++;
 	}
-	return (lst);
+	return (b);
 }
+/*
+memset se contente de remplir un void buffer avec un int
+(qui est en realite un)
+*/

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 14:22:14 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/06 09:49:09 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/02 14:22:01 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/25 12:14:39 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_bzero(void *s, size_t n)
 {
-	void	*buffer;
-
-	buffer = malloc(size * count);
-	if (!buffer)
-		return (NULL);
-	ft_bzero(buffer, size * count);
-	return (buffer);
+	ft_memset(s, 0, n);
 }
 /*
-Calloc est un malloc "custom"
-Il va en effet malloc count * size,
-mais egalement remplir le buffer en question avec des 0
-grace a bzero
+ft_bzero initialise un void* avec des 0 dans tout le buffer,
+afin d'eviter des valeurs "parasites" de se glisser
 
 */

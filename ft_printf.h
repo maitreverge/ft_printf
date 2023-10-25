@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/25 11:26:47 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 12:14:18 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "libft/libft.h"
-# include <stdio.h>
+# include <stdio.h> // DO NOT FORGET TO DELETE LATER
 
 // 10 fields
 typedef struct s_flags {
@@ -53,6 +52,16 @@ int		no_width(char *nul_str);
 int		yes_width(char *nul_str, t_flags flags);
 
 // utils
+
+
+void	*ft_calloc(size_t count, size_t size);
+int		ft_isdigit(int c);
+size_t	ft_strlen(const char *s);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
+
+
+
 int		width_or_precision(const char *s);
 void	print_width_space(int nb);
 void	print_width_zero(int nb);

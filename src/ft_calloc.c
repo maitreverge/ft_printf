@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 14:22:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/06 09:49:50 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/02 14:22:14 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/25 12:10:39 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_isalnum(int c)
+void	*ft_calloc(size_t count, size_t size)
 {
-	if ((ft_isalpha(c) == 1) || (ft_isdigit(c) == 1))
-		return (1);
-	return (0);
+	void	*buffer;
+
+	buffer = malloc(size * count);
+	if (!buffer)
+		return (NULL);
+	ft_bzero(buffer, size * count);
+	return (buffer);
 }
 /*
-isalnum est la fusion de isalpha et isdigit
+Calloc est un malloc "custom"
+Il va en effet malloc count * size,
+mais egalement remplir le buffer en question avec des 0
+grace a bzero
+
 */

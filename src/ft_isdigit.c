@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 14:22:41 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/06 09:52:01 by flverge          ###   ########.fr       */
+/*   Created: 2023/10/02 14:23:10 by flverge           #+#    #+#             */
+/*   Updated: 2023/10/25 12:10:44 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-static int	ft_isupper(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
-
-static int	ft_islower(int c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
-
-int	ft_isalpha(int c)
-{
-	if (ft_islower(c) == 1 || ft_isupper(c) == 1)
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 /*
-Isalpha peut representer soit des lettres majuscules ou minuscules
-d'ou l'interet de decouper en trois fonctions pour plus de lisibilite
+Check si le char donne est bien un chiffre
 
 */
