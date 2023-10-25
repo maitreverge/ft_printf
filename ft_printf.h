@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/25 13:55:14 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 14:13:26 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ int		print_string(char *str, t_flags flags);
 int		empty_string(char *nul_str, t_flags flags);
 int		no_width(char *nul_str);
 int		yes_width(char *nul_str, t_flags flags);
+
+// %p
+int		print_adress(unsigned long nb, t_flags flags);
+
 
 // utils
 
