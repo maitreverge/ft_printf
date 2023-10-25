@@ -6,11 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:36:19 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:39:44 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 t_flags	zero_init_struct(void)
 {

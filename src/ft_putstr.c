@@ -6,11 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:53:04 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:36:21 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:39:42 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_putchar(char c)
 {

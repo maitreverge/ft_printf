@@ -6,11 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:27:45 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:36:07 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:39:52 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 int	int_len(int n)
 {

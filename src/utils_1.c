@@ -6,11 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:36:12 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:39:49 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 int	width_or_precision(const char *s)
 {

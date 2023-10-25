@@ -6,11 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:36:26 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:39:38 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 int	placeholder_behaviour(t_flags flags, va_list args)
 {
