@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:48:17 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 13:57:25 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	placeholder_behaviour(t_flags flags, va_list args)
 	if (flags.placeholder == '%')
 		result = print_char('%', flags);
 	else if (flags.placeholder == 'c')
+	{
+		// print_struct(flags);
 		result = print_char(va_arg(args, int), flags);
+	}
 	else if (flags.placeholder == 's')
 		result = print_string(va_arg(args, char *), flags);
 	return (result);
@@ -41,6 +44,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			current_flag = turbo_parsing(&format[i + 1]);
+			// print_struct(current_flag);
 			len_printf += placeholder_behaviour(current_flag, args);
 			i += count_flags(current_flag);
 		}

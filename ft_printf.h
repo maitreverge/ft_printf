@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/25 12:14:18 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 13:55:14 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,10 @@ typedef struct s_flags {
 	int		minus_sign;
 	int		zero;
 	int		width;
+	int		width_zeros;
 	int		point;
 	int		precision;
+	int		precision_zeros;
 	int		lenght_print;
 }	t_flags;
 
@@ -61,7 +63,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 
 
-
+int		check_flags(char c);
 int		width_or_precision(const char *s);
 void	print_width_space(int nb);
 void	print_width_zero(int nb);
