@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:29:11 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/06 16:04:13 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:30:17 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,32 +71,5 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void*(*f)(void *), void(*del) (void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
-
-// int		ft_abs(int c);
-// size_t	ft_countwords(char const *str, char c);
-// int		ft_intlen(int n);
-// int		ft_isblank(int c);
-// int		ft_iscntrl(int c);
-// int		ft_isgraph(int c);
-// int		ft_islower(int c);
-// int		ft_isspace(int c);
-// int		ft_isupper(int c);
-// int		ft_isxdigit(int c);
-// char	*ft_newstr(size_t size);
-// void	ft_putchar(char c);
-// long	ft_power(int nb, int power);
-// int		ft_str_is_alpha(char *str);
-// int		ft_str_is_lowercase(char *str);
-// int		ft_str_is_digit(char *str);
-// int		ft_str_is_printable(char *str);
-// int		ft_str_is_unique_chars(char *str);
-// int		ft_str_is_uppercase(char *str);
-// char	*ft_strcapitalize(char *str);
-// int		ft_strcasecmp(const char *s1, const char *s2);
-// char	*ft_strcasestr(const char *haystack, const char *needle);
-// char	*ft_strlowcase(char *str);
-// char	*ft_strncpy(char *dest, char const *src, size_t n);
-// char	*ft_strndup(const char *s1, size_t n);
-// int		ft_strcmp(const char *s1, const char *s2);
 
 #endif

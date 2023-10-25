@@ -6,21 +6,17 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/24 15:14:06 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/25 10:29:55 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include "lib/libft.h"
-# include <stdio.h>
+# include "headers/libft.h"
 
 // 10 fields
 typedef struct s_flags {
