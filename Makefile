@@ -6,41 +6,39 @@
 #    By: flverge <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/05 17:21:33 by nope              #+#    #+#              #
-#    Updated: 2023/10/25 11:12:16 by flverge          ###   ########.fr        #
+#    Updated: 2023/10/25 11:23:57 by flverge          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I headers/
+CFLAGS = -Wall -Wextra -Werror -I.
+
+LIBFT = libft/libft.a
 
 
-SRC_DIR_PRINTF := src
-SRC_PRINTF := $(wildcard $(SRC_DIR_PRINTF)/*.c)
-OBJ_PRINTF = ${SRC_PRINTF:.c=.o}
-
-
-
-SRC_DIR_LIBFT := libft
-SRC_LIBFT := $(wildcard $(SRC_DIR_LIBFT)/*.c)
-OBJ_LIBFT = ${SRC_LIBFT:.c=.o}
-
+SRC_DIR := src
+SRC := $(wildcard $(SRC_DIR)/*.c)
+OBJ = ${SRC:.c=.o}
 
 
 all: $(NAME)
 
-$(NAME): $(OBJ_PRINTF) $(OBJ_LIBFT) 
-	ar rcs $(NAME) $(OBJ_PRINTF) $(OBJ_LIBFT)
+$(NAME): $(OBJ)
+	cd libft/ && make all bonus && cd ..
+	ar rcs $(NAME) $(OBJ) $(LIBFT)
 	ranlib $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ_PRINTF) $(OBJ_LIBFT)
+	rm -f $(OBJ)
+	rm -f libft/*.o
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f libft/libft.a
 
 bonus:
 	make all
