@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 15:58:28 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:20:31 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -591,6 +591,10 @@ int	main(void)
 	bn();
 	return_values(v_printf, v_ftprintf);
 
+
+	// ! FIN BONUS P
+
+	
 	
 
 	// 	// * TEST 12
@@ -733,6 +737,41 @@ int	main(void)
 	headings(2);
 	v_ftprintf = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
 	
+	return_values(v_printf, v_ftprintf);
+
+
+	// ! BONUS PART i
+
+	displayTestSeparator("BONUS %i 1", 92);
+
+	headings(1);
+	v_printf = printf("[%1i]", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%1i]", 0);
+
+	return_values(v_printf, v_ftprintf);
+
+	
+	
+	displayTestSeparator("BONUS %i 2", 92);
+
+	headings(1);
+	v_printf = printf("[%1i]", -4);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%1i]", -4);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 3", 92);
+
+	headings(1);
+	v_printf = printf("[%10i]", 42);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%10i]", 42);
+
 	return_values(v_printf, v_ftprintf);
 
 	////////////////////////////////

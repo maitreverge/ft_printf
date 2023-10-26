@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 16:00:59 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:29:35 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	print_plus_or_space(int nb, t_flags flags)
 	plus_sign = 0;
 	space_sign = 0;
 
-	if (flags.plus_sign && nb > 0 && !flags.space)
+	if (flags.plus_sign && nb >= 0 && !flags.space)
 	{
 		plus_sign++;
 		ft_putchar('+');
 	}
-	else if (flags.space && !flags.plus_sign)
+	else if (flags.space && !flags.plus_sign && nb >= 0)
 	{
 		space_sign++;
 		ft_putchar(' ');
@@ -49,6 +49,7 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 	return (space_plus_flag + flags.lenght_print);
 }
 
+// ! gestion des zeros qui me brisent les couilles
 int	yes_width_int(int nb, int len_nb, t_flags flags)
 {
 	int	space_plus_flag;
