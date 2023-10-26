@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 10:09:21 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 15:58:28 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -671,71 +671,71 @@ int	main(void)
 
 	// return_values(v_printf, v_ftprintf);
 
-	// // * TEST 18
+	// * TEST 18
 
-	// displayTestSeparator("Test %i int negative", 92);
+	displayTestSeparator("Test %i int negative", 92);
 
-	// headings(1);
-	// v_printf = printf("%i", -42);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%i", -42);
-	// bn();
+	headings(1);
+	v_printf = printf("%i", -42);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%i", -42);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// // * TEST 19
+	// * TEST 19
 
-	// displayTestSeparator("Test %i int null", 92);
+	displayTestSeparator("Test %i int null", 92);
 
-	// headings(1);
-	// v_printf = printf("%i", 0);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%i", 0);
-	// bn();
+	headings(1);
+	v_printf = printf("%i", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%i", 0);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
-
-	
-	// // * TEST 20
-
-	// displayTestSeparator("Test %i int max", 92);
-
-	// headings(1);
-	// v_printf = printf("%i", FT_INT_MAX);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%i", FT_INT_MAX);
-
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
 	
-	// // * TEST 21
+	// * TEST 20
 
-	// displayTestSeparator("Test %i int min", 92);
+	displayTestSeparator("Test %i int max", 92);
 
-	// headings(1);
-	// v_printf = printf("%i", FT_INT_MIN);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%i", FT_INT_MIN);
+	headings(1);
+	v_printf = printf("%i", FT_INT_MAX);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%i", FT_INT_MAX);
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// // * TEST 22
-
-	// displayTestSeparator("Test %i int multiples", 92);
-
-	// headings(1);
-	// v_printf = printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
 	
-	// return_values(v_printf, v_ftprintf);
+	// * TEST 21
 
-	// ////////////////////////////////
+	displayTestSeparator("Test %i int min", 92);
+
+	headings(1);
+	v_printf = printf("%i", FT_INT_MIN);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%i", FT_INT_MIN);
+
+	return_values(v_printf, v_ftprintf);
+
+	// * TEST 22
+
+	displayTestSeparator("Test %i int multiples", 92);
+
+	headings(1);
+	v_printf = printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%i%i%i%i%i%i%i", 10, 23, -2, 37, 200, -9999, 977779);
+	
+	return_values(v_printf, v_ftprintf);
+
+	////////////////////////////////
 
 	
 	// // * TEST 23

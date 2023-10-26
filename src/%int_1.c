@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   %i_%d.c                                            :+:      :+:    :+:   */
+/*   %int_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 13:58:48 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 16:00:59 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,36 +85,20 @@ int	yes_precision(int nb, int len_nb, t_flags flags)
 	return (flags.lenght_print);
 }
 
-int	no_precision(int nb, int len_nb, t_flags flags)
-{
-	
-}
-
 int	print_i_and_d(int nb, t_flags flags)
 {
 	int	len_nb;
+	int	polarity;
 
-	len_nb = int_len(nb);
+	if (nb < 0)
+		polarity = 1;
+	else
+		polarity = 0;
+	len_nb = int_len_zero(nb);
 	// pas de gestion du flag 0
 	if (flags.point)
 		flags.lenght_print = yes_precision(nb, len_nb, flags);
-	else // gestion du flag 0
+	else
 		flags.lenght_print = no_precision(nb, len_nb, flags);
-	return (flags.lenght_print);
+	return (flags.lenght_print + polarity);
 }
-
-/*
-
-int	ft_print_int(int nb)
-{
-	ft_putnbr(nb);
-	if (nb < 0)
-		return (ft_intlen(nb) + 1);
-	return (ft_intlen(nb));
-}
-*/
-
-/*
-! ETAPE 1 : Determiner la precision
-
-*/

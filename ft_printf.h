@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/26 13:13:43 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 15:59:25 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdio.h> // DO NOT FORGET TO DELETE LATER
+
+# define FT_INT_MAX 2147483647
+# define FT_INT_MIN -2147483648
 
 // 10 fields
 typedef struct s_flags {
@@ -60,6 +63,15 @@ int		empty_adress(char *nul_str, t_flags flags);
 void	putnbr_hexa_adress(unsigned long nb);
 int		intlen_hexa(unsigned long n);
 
+// %i && %d
+int		print_i_and_d(int nb, t_flags flags);
+int		yes_precision(int nb, int len_nb, t_flags flags);
+int		no_precision(int nb, int len_nb, t_flags flags);
+int		yes_width_int(int nb, int len_nb, t_flags flags);
+int		no_width_int(int nb, int len_nb, t_flags flags);
+int		print_plus_or_space(int nb, t_flags flags);
+int		yes_minus(int nb, int space_plus_flag, t_flags flags);
+int		no_minus(int nb, int space_plus_flag, t_flags flags);
 
 
 // utils
@@ -81,6 +93,7 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	print_struct(t_flags s);
 int		int_len(long n);
+int		int_len_zero(long n);
 int		count_flags(t_flags s);
 char	*ft_strndup(const char *s, size_t n);
 void	ft_putnbr(long nb);
