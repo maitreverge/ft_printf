@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/25 16:24:50 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 13:13:43 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,15 @@ void	*ft_memset(void *b, int c, size_t len);
 int		check_flags(char c);
 int		width_or_precision(const char *s);
 void	print_width_space(int nb);
-void	print_width_zero(int nb);
+void	print_zero(int nb);
 int		pos_width(int width, int lenght);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 void	print_struct(t_flags s);
-int		int_len(int n);
+int		int_len(long n);
 int		count_flags(t_flags s);
 char	*ft_strndup(const char *s, size_t n);
+void	ft_putnbr(long nb);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:37:35 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 13:55:59 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 13:13:09 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	print_width_space(int nb)
 	}
 }
 
-void	print_width_zero(int nb)
+void	print_zeros(int nb)
 {
 	int	i;
 

@@ -6,18 +6,23 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:27:45 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 16:19:46 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 12:48:04 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	int_len(int n)
+int	int_len(long n)
 {
 	int	i;
 
 	if (n == 0)
-		return (0);
+		return (1);
+	if (n < 0)
+	{
+		i++;
+		n *= (-1);
+	}
 	i = 0;
 	while (n != 0)
 	{
@@ -43,6 +48,18 @@ char	*ft_strndup(const char *s, size_t n)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+void	ft_putnbr(long nb)
+{
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar((nb % 10) + 48);
 }
 
 

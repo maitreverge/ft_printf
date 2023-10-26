@@ -8,7 +8,7 @@ int main(void)
 	char *adress = "qwghtgtrefrg";
 	char *empty_adress = NULL;
 	int pos_int = 123;
-	int neg_int = -42;
+	int neg_int = -123;
 	int hexa = 0xdeadc0de;
 	int neg_hexa = 0xD7;
 	int octal = 0337;
@@ -18,11 +18,11 @@ int main(void)
 
 	// printf("[%-12.3s]\n-----\n\n", str);
 	
-	printf("[%p]\n-----\n\n", adress);
+	// printf("[%p]\n-----\n\n", adress);
 
-	printf("[%50p]\n-----\n\n", empty_adress);
+	// printf("[%50p]\n-----\n\n", empty_adress);
 	
-	// printf("%d\n-----\n\n", pos_int);
+	printf("[%+.4i]\n-----\n\n", pos_int);
 	
 	// printf("%d\n-----\n\n", neg_int);
 	
