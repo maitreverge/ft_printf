@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 16:53:51 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 10:09:21 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -564,10 +564,30 @@ int	main(void)
 	displayTestSeparator("BONUS %P 1", 91);
 
 	headings(1);
-	v_printf = printf("Adress = %1p", &pointer_test);
+	v_printf = printf("[%1p]", &pointer_test);
 	bn();
 	headings(2);
-	v_ftprintf = ft_printf("Adress = %1p", &pointer_test);
+	v_ftprintf = ft_printf("[%1p]", &pointer_test);
+	bn();
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %P 2", 91);
+
+	headings(1);
+	v_printf = printf("[%12p]", &pointer_test);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%12p]", &pointer_test);
+	bn();
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %P 3", 91);
+
+	headings(1);
+	v_printf = printf("[%-20p]", &pointer_test);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-20p]", &pointer_test);
 	bn();
 	return_values(v_printf, v_ftprintf);
 
