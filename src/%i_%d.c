@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 13:19:20 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/26 13:58:48 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,34 +40,54 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 
 	precision = flags.precision - len_nb;
 	space_plus_flag = print_plus_or_space(nb, flags);
-	if (!flags.precision)
+	if (precision > 0)
+		print_zero(precision);
+	ft_putnbr(nb);
+	if (precision < 0)
+		precision = 0;
+	flags.lenght_print = len_nb + precision;
+	return (space_plus_flag + flags.lenght_print);
+}
+
+int	yes_width_int(int nb, int len_nb, t_flags flags)
+{
+	int	space_plus_flag;
+	int	precision;
+
+	precision = flags.precision - len_nb;
+	if (precision < 0)
+		precision = 0;
+	if (flags.minus_sign)
 	{
-		ft_putnbr(nb);
-		flags.lenght_print = len_nb;
-	}
-	else
-	{
-		if (precision)
+		flags.lenght_print = len_nb + precision;
+		space_plus_flag = print_plus_or_space(nb, flags);
+		if (precision > 0)
 			print_zero(precision);
 		ft_putnbr(nb);
-		if (precision < 0)
-			precision = 0;
-		flags.lenght_print = len_nb + precision;
+		print_width_space(flags.width - flags.lenght_print);
+		return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
 	}
-	return (space_plus_flag + flags.lenght_print);
+	flags.lenght_print = len_nb + precision;
+	print_width_space(flags.width - flags.lenght_print);
+	space_plus_flag = print_plus_or_space(nb, flags);
+	if (precision > 0)
+		print_zero(precision);
+	ft_putnbr(nb);
+	return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
 }
 
 int	yes_precision(int nb, int len_nb, t_flags flags)
 {
 	if (!flags.width)
-	{
-		flags.lenght_print = no_width_int(nb, len_nb, flags)
-	}
+		flags.lenght_print = no_width_int(nb, len_nb, flags);
 	else
-	{
-		
-	}
+		flags.lenght_print = yes_width_int(nb, len_nb, flags);
 	return (flags.lenght_print);
+}
+
+int	no_precision(int nb, int len_nb, t_flags flags)
+{
+	
 }
 
 int	print_i_and_d(int nb, t_flags flags)
@@ -75,10 +95,11 @@ int	print_i_and_d(int nb, t_flags flags)
 	int	len_nb;
 
 	len_nb = int_len(nb);
+	// pas de gestion du flag 0
 	if (flags.point)
-	{
 		flags.lenght_print = yes_precision(nb, len_nb, flags);
-	}
+	else // gestion du flag 0
+		flags.lenght_print = no_precision(nb, len_nb, flags);
 	return (flags.lenght_print);
 }
 
