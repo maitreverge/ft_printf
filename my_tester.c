@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 12:09:40 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 12:48:30 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -857,7 +857,6 @@ int	main(void)
 	v_ftprintf = ft_printf("[%.1i]", FT_INT_MIN + 1);
 	return_values(v_printf, v_ftprintf);
 
-	displayTestSeparator("BONUS %i 12", 92);
 
 	displayTestSeparator("BONUS %i 12", 92);
 
@@ -875,6 +874,46 @@ int	main(void)
 	bn();
 	headings(2);
 	v_ftprintf = ft_printf("[%.1i]", FT_INT_MAX);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 14", 92);
+
+	headings(1);
+	v_printf = printf("[%.0i]", 42);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.0i]", 42);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 15", 92);
+
+	headings(1);
+	v_printf = printf("[%.0i]", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.0i]", 0);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 16", 92);
+
+	headings(1);
+	v_printf = printf("[%.1i]", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.1i]", 0);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 17", 92);
+
+	headings(1);
+	v_printf = printf("[%.2i]", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.2i]", 0);
 
 	return_values(v_printf, v_ftprintf);
 
