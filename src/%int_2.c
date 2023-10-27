@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 10:37:33 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 15:33:42 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	no_minus(int nb, int spa_plu, t_flags flags, int polarity)
 		print_zero(flags.width - int_len_zero(nb) - polarity);
 	spa_plu = print_plus_or_space(nb, flags);
 	ft_putnbr(nb);
-	// return (spa_plu + pos_width(flags.width, int_len_zero(nb)));
 	return (pos_width(flags.width, (int_len_zero(nb) + spa_plu + polarity)) + int_len_zero(nb));
 }
 
