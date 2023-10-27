@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 11:06:11 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 12:13:10 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,11 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 		ft_putchar('-');
 	if (precision > 0)
 		print_zero(precision);
-	if (nb < 0)
-		ft_putnbr(nb * -1);
-	else
+	if (nb < 0 && nb != FT_INT_MIN)
+		ft_putnbr(nb * (-1));
+	if (nb == FT_INT_MIN)
+		ft_putstr("2147483648");
+	if (nb > 0)
 		ft_putnbr(nb);
 	if (precision < 0)
 		precision = 0;
@@ -57,8 +59,8 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 // ! gestion des zeros qui me brisent les couilles
 int	yes_width_int(int nb, int len_nb, t_flags flags)
 {
-	int	space_plus_flag;
-	int	precision;
+	int		space_plus_flag;
+	int		precision;
 
 	precision = flags.precision - len_nb;
 	if (precision < 0)
@@ -71,9 +73,11 @@ int	yes_width_int(int nb, int len_nb, t_flags flags)
 			ft_putchar('-');
 		if (precision > 0)
 			print_zero(precision);
-		if (nb < 0)
+		if (nb < 0 && nb != FT_INT_MIN)
 			ft_putnbr(nb * (-1));
-		else
+		if (nb == FT_INT_MIN)
+			ft_putstr("2147483648");
+		if (nb > 0)
 			ft_putnbr(nb);
 		print_width_space(flags.width - flags.lenght_print);
 		return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
@@ -85,9 +89,11 @@ int	yes_width_int(int nb, int len_nb, t_flags flags)
 	print_width_space(flags.width - flags.lenght_print);
 	if (precision > 0)
 		print_zero(precision);
-	if (nb < 0)
-		ft_putnbr(nb * -1);
-	else
+	if (nb < 0 && nb != FT_INT_MIN)
+		ft_putnbr(nb * (-1));
+	if (nb == FT_INT_MIN)
+		ft_putstr("2147483648");
+	if (nb > 0)
 		ft_putnbr(nb);
 	return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
 }
