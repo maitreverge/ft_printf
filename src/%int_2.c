@@ -6,51 +6,56 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 15:36:43 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 10:37:33 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	no_minus(int nb, int space_plus_flag, t_flags flags)
+int	no_minus(int nb, int spa_plu, t_flags flags, int polarity)
 {
 	if (!flags.zero)
-		print_zero(flags.width - flags.lenght_print);
+		print_width_space(flags.width - int_len_zero(nb) - polarity);
 	else
-		print_width_space(flags.width - flags.lenght_print);
-	space_plus_flag = print_plus_or_space(nb, flags);
+		print_zero(flags.width - int_len_zero(nb) - polarity);
+	spa_plu = print_plus_or_space(nb, flags);
 	ft_putnbr(nb);
-	return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
+	// return (spa_plu + pos_width(flags.width, int_len_zero(nb)));
+	return (pos_width(flags.width, (int_len_zero(nb) + spa_plu + polarity)) + int_len_zero(nb));
 }
 
-int	yes_minus(int nb, int space_plus_flag, t_flags flags)
+int	yes_minus(int nb, int spa_plu, t_flags flags, int polarity)
 {
-	space_plus_flag = print_plus_or_space(nb, flags);
+	spa_plu = print_plus_or_space(nb, flags);
 	ft_putnbr(nb);
 	if (!flags.zero)
-		print_zero(flags.width - flags.lenght_print);
+		print_width_space(flags.width - (int_len_zero(nb) + spa_plu) - polarity);
 	else
-		print_width_space(flags.width - flags.lenght_print);
-	return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
+		print_zero(flags.width - (int_len_zero(nb) + spa_plu) + polarity);
+	return (pos_width(flags.width, (int_len_zero(nb) + spa_plu + polarity)) + int_len_zero(nb));
 }
 
 int	no_precision(int nb, int len_nb, t_flags flags)
 {
-	int	space_plus_flag;
+	int	spa_plu;
+	int	polarity;
 
-	space_plus_flag = 0;
+	spa_plu = 0;
+	polarity = 0;
+	if (nb < 0)
+		polarity = 1;
 	if (!flags.width)
 	{
-		space_plus_flag = print_plus_or_space(nb, flags);
+		spa_plu = print_plus_or_space(nb, flags);
 		ft_putnbr(nb);
-		flags.lenght_print = (space_plus_flag + len_nb);
+		flags.lenght_print = (spa_plu + len_nb);
 	}
 	else
 	{
 		if (!flags.minus_sign)
-			flags.lenght_print = no_minus(nb, space_plus_flag, flags);
+			flags.lenght_print = no_minus(nb, spa_plu, flags, polarity);
 		else
-			flags.lenght_print = yes_minus(nb, space_plus_flag, flags);
+			flags.lenght_print = yes_minus(nb, spa_plu, flags, polarity);
 	}
 	return (flags.lenght_print);
 }

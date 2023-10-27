@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 16:29:35 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 11:06:11 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,14 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 
 	precision = flags.precision - len_nb;
 	space_plus_flag = print_plus_or_space(nb, flags);
+	if (nb < 0)
+		ft_putchar('-');
 	if (precision > 0)
 		print_zero(precision);
-	ft_putnbr(nb);
+	if (nb < 0)
+		ft_putnbr(nb * -1);
+	else
+		ft_putnbr(nb);
 	if (precision < 0)
 		precision = 0;
 	flags.lenght_print = len_nb + precision;
@@ -62,18 +67,28 @@ int	yes_width_int(int nb, int len_nb, t_flags flags)
 	{
 		flags.lenght_print = len_nb + precision;
 		space_plus_flag = print_plus_or_space(nb, flags);
+		if (nb < 0)
+			ft_putchar('-');
 		if (precision > 0)
 			print_zero(precision);
-		ft_putnbr(nb);
+		if (nb < 0)
+			ft_putnbr(nb * (-1));
+		else
+			ft_putnbr(nb);
 		print_width_space(flags.width - flags.lenght_print);
 		return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
 	}
 	flags.lenght_print = len_nb + precision;
-	print_width_space(flags.width - flags.lenght_print);
 	space_plus_flag = print_plus_or_space(nb, flags);
+	if (nb < 0)
+		ft_putchar('-');
+	print_width_space(flags.width - flags.lenght_print);
 	if (precision > 0)
 		print_zero(precision);
-	ft_putnbr(nb);
+	if (nb < 0)
+		ft_putnbr(nb * -1);
+	else
+		ft_putnbr(nb);
 	return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
 }
 
@@ -96,7 +111,6 @@ int	print_i_and_d(int nb, t_flags flags)
 	else
 		polarity = 0;
 	len_nb = int_len_zero(nb);
-	// pas de gestion du flag 0
 	if (flags.point)
 		flags.lenght_print = yes_precision(nb, len_nb, flags);
 	else

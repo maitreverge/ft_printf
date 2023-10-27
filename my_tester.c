@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 16:20:31 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 10:42:25 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -771,6 +771,80 @@ int	main(void)
 	bn();
 	headings(2);
 	v_ftprintf = ft_printf("[%10i]", 42);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 4", 92);
+
+	headings(1);
+	v_printf = printf("[%20i]", -42000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%20i]", -42000);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 5", 92);
+
+	headings(1);
+	v_printf = printf("[%20i]", 42000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%20i]", 42000);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 6", 92);
+
+	headings(1);
+	v_printf = printf("[%-20i]", 42000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-20i]", 42000);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 7", 92);
+
+	headings(1);
+	v_printf = printf("[%-20i]", -42000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-20i]", -42000);
+
+	return_values(v_printf, v_ftprintf);
+
+
+
+	
+
+	displayTestSeparator("BONUS %i 8", 92);
+
+	headings(1);
+	v_printf = printf("[%.3i]", -1);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.3i]", -1);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 9", 92);
+
+	headings(1);
+	v_printf = printf("[%.5i]", 1234);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.5i]", 1234);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 10", 92);
+
+	headings(1);
+	v_printf = printf("[%.13i]", FT_INT_MIN);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%.13i]", FT_INT_MIN);
 
 	return_values(v_printf, v_ftprintf);
 
