@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 12:52:53 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 15:01:56 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 
 	precision = flags.precision - len_nb;
 	space_plus_flag = print_plus_or_space(nb, flags);
-	if (nb == 0 && flags.precision == 0)
+	if (nb == 0 && !flags.precision && !flags.width)
 		return (0);
 	if (nb < 0)
 		ft_putchar('-');
@@ -63,7 +63,13 @@ int	yes_width_int(int nb, int len_nb, t_flags flags)
 {
 	int		space_plus_flag;
 	int		precision;
+	int		polarity;
 
+	polarity = 0;
+	if (nb < 0)
+		polarity = 1;
+
+	// precision = flags.precision - len_nb + polarity;
 	precision = flags.precision - len_nb;
 	if (precision < 0)
 		precision = 0;
@@ -81,8 +87,10 @@ int	yes_width_int(int nb, int len_nb, t_flags flags)
 			ft_putstr("2147483648");
 		if (nb >= 0)
 			ft_putnbr(nb);
-		print_width_space(flags.width - flags.lenght_print);
-		return (space_plus_flag + pos_width(flags.width, flags.lenght_print));
+		if (nb == 0 && flags.precision == 0)
+			return (flags.width);
+		print_width_space(flags.width - (flags.lenght_print + polarity));
+		return (space_plus_flag + pos_width(flags.width, flags.lenght_print) + precision + len_nb);
 	}
 	flags.lenght_print = len_nb + precision;
 	space_plus_flag = print_plus_or_space(nb, flags);

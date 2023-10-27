@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 12:48:30 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/27 14:57:38 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -916,6 +916,40 @@ int	main(void)
 	v_ftprintf = ft_printf("[%.2i]", 0);
 
 	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 18", 92);
+
+	headings(1);
+	v_printf = printf("[%-1.8i]", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-1.8i]", 0);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 19", 92);
+
+	headings(1);
+	v_printf = printf("[%-1.0i]", -10);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-1.0i]", -10);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 20", 92);
+
+	headings(1);
+	v_printf = printf("[%-10.0i]", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-10.0i]", 0);
+
+	return_values(v_printf, v_ftprintf);
+
+	
+
+	
 
 	////////////////////////////////
 
