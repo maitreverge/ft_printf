@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/28 10:01:32 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/28 10:17:03 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ int		no_width_int(int nb, int len_nb, t_flags flags);
 int		print_plus_or_space(int nb, t_flags flags);
 int		yes_minus(int nb, int space_plus_flag, t_flags flags, int polarity);
 int		no_minus(int nb, int space_plus_flag, t_flags flags, int polarity);
+
+// %u
+
+// %x && %X
 
 
 // utils
