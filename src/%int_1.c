@@ -6,32 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/28 10:01:27 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/28 11:10:29 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	print_plus_or_space(int nb, t_flags flags)
-{
-	int	plus_sign;
-	int	space_sign;
-
-	plus_sign = 0;
-	space_sign = 0;
-
-	if (flags.plus_sign && nb >= 0 && !flags.space)
-	{
-		plus_sign++;
-		ft_putchar('+');
-	}
-	else if (flags.space && !flags.plus_sign && nb >= 0)
-	{
-		space_sign++;
-		ft_putchar(' ');
-	}
-	return (plus_sign + space_sign);
-}
 
 int	no_width_int(int nb, int len_nb, t_flags flags)
 {
