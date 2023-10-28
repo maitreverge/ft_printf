@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:56:30 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 16:30:03 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/28 10:01:27 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,26 +56,6 @@ int	no_width_int(int nb, int len_nb, t_flags flags)
 		precision = 0;
 	flags.lenght_print = len_nb + precision;
 	return (space_plus_flag + flags.lenght_print);
-}
-
-int	zero_case(int lent_flags flags)
-{
-	if (!flags.precision)
-	{
-		if (!flags.width)
-		{
-			ft_putchar('0');
-			flags.lenght_print = 1;
-		}
-		else
-		{
-			print_zero(flags.precision);
-			ft_putchar('0');
-			flags.lenght_print = flags.precision - ;
-		}
-		
-	}
-	return (flags.lenght_print);
 }
 
 // ! gestion des zeros qui me brisent les couilles
@@ -143,8 +123,6 @@ int	print_i_and_d(int nb, t_flags flags)
 	else
 		polarity = 0;
 	len_nb = int_len_zero(nb);
-	if (nb == 0)
-		return (zero_case(flags));
 	if (flags.point)
 		flags.lenght_print = yes_precision(nb, len_nb, flags);
 	else
