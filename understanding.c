@@ -13,6 +13,8 @@ int main(void)
 	int neg_hexa = 0xD7;
 	int octal = 0337;
 
+	int return_value;
+
 
 	// printf("[%-c]\n-----\n\n", c);
 
@@ -22,7 +24,23 @@ int main(void)
 
 	// printf("[%50p]\n-----\n\n", empty_adress);
 	
-	printf("[%+.4i]\n-----\n\n", pos_int);
+	return_value = printf("[%+7i]", pos_int);
+
+	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	return_value = printf("[%+7i]", neg_int);
+
+	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	return_value = printf("[%+07i]", pos_int);
+
+	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+
+	return_value = printf("[%+07i]", neg_int);
+
+	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
 	
 	// printf("%d\n-----\n\n", neg_int);
 	
