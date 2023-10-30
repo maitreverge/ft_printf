@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 10:08:52 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 10:35:13 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,9 @@ int	preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 
 	if (real_precision > 0)
 		print_zero(real_precision);
+
+
+		
 	else
 		real_precision = 0;
 
