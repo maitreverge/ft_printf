@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 16:47:02 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 16:55:56 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -239,6 +239,6 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags) // PAS DE GESTION DES ZE
 
 int	zero_case(t_flags flags)
 {
-	print_zero(flags.width);
+	print_width_space(flags.width);
 	return (flags.width);
 }
