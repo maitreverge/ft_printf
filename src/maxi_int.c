@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 13:46:17 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 14:53:18 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,8 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 	int real_width;
 	int real_precision;
 	int	len_prec;
+	int return_polarity;
+	return_polarity = 0;
 
 	len_prec = len_nb;
 	if (nb < 0)
@@ -203,16 +205,24 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 	}
 
 	// ? Valeurs de retour
-
+	if (nb < 0)
+		return_polarity = 1;
+	
 	if (flags.width < flags.precision) // %5.10
 	{
 		if (flags.precision > len_nb)
-			return flags.precision + sp_pl;
+			return flags.precision + sp_pl + return_polarity;
 		else
 			return (len_nb + sp_pl);
 	}
-	// else // %-10.5
-	return (flags.width + sp_pl);
+	else
+	{
+		if (flags.precision > len_nb)
+			return (flags.width + sp_pl + return_polarity);
+		else
+			return (flags.width + sp_pl);
+	}
+	// return (flags.width + sp_pl);
 	// return (sp_pl + real_width + flags.precision + len_nb);
 	// return (sp_pl + real_width + real_precision + len_nb);
 
