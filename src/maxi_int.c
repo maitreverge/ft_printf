@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 12:08:16 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 12:14:08 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,7 +197,13 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 			real_precision = 0;
 	}
 
-
+	if (flags.width < flags.precision)
+	{
+		if (flags.precision > len_nb)
+			return flags.precision + sp_pl;
+		else
+			return (len_nb + sp_pl);
+	}
 	// return (sp_pl + real_width + flags.precision + len_nb);
 	return (sp_pl + real_width + real_precision + len_nb);
 
