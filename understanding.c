@@ -37,7 +37,7 @@ int main(void)
 
 	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
-	return_value = printf("[%-12.8i]", -12345);
+	return_value = printf("[%-20.19i]", 8000);
 
 	printf("\n---\nReturn value = %i\n\n", return_value - 2);
 

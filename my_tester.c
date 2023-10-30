@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/27 14:57:38 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 21:21:57 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -944,6 +944,26 @@ int	main(void)
 	bn();
 	headings(2);
 	v_ftprintf = ft_printf("[%-10.0i]", 0);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 21", 92);
+
+	headings(1);
+	v_printf = printf("[%-20.19i]", 8000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%-20.19i]", 8000);
+
+	return_values(v_printf, v_ftprintf);
+
+	displayTestSeparator("BONUS %i 22", 92);
+
+	headings(1);
+	v_printf = printf("[%20.19i]", 8000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("[%20.19i]", 8000);
 
 	return_values(v_printf, v_ftprintf);
 

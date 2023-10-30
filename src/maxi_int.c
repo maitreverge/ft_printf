@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 17:28:58 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 21:44:22 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	print_i_and_d_reload(int n, t_flags flags)
 	nb = n;
 	len_nb = int_len_zero(n);
 	sp_pl = 0;
-	// ce bloc fait ceci cela jhdwsebgfjyerbgtiuberndiu
 	if (!flags.point)
 		flags.lenght_print = preci_0(nb, len_nb, flags, sp_pl);
 	else
@@ -49,7 +48,7 @@ int	preci_0_width_1(long nb, int len_nb, t_flags flags, int sp_pl)
 {
 	int real_width;
 
-	if (flags.minus_sign) // PAS DE GESTION DE ZERO
+	if (flags.minus_sign)
 	{
 		sp_pl = print_plus_or_space(nb, flags);
 		
@@ -65,7 +64,7 @@ int	preci_0_width_1(long nb, int len_nb, t_flags flags, int sp_pl)
 	{
 		if (!flags.zero)
 		{
-			real_width = flags.width - determine_plus_or_space(nb, flags) - len_nb;
+			real_width = flags.width - determine_plus(nb, flags) - len_nb;
 			if (real_width > 0)
 			{
 				if (flags.zero)
@@ -161,7 +160,8 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags) // PAS DE GESTION DES ZE
 		real_precision = 0;
 	
 	
-	real_width = flags.width - determine_plus_or_space(nb, flags) - len_nb - real_precision;
+	real_width = flags.width - determine_plus(nb, flags) - len_nb - real_precision;
+	// real_width = flags.width - determine_plus(nb, flags) - flags.precision;
 	if (real_width < 0)
 		real_width = 0;
 	if (!flags.precision && !nb)
@@ -170,13 +170,13 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags) // PAS DE GESTION DES ZE
 	if (!flags.minus_sign) // ! width, polarity, number
 	{
 		// if (real_width > real_precision)
-		if (real_width >= real_precision)
-		{
-			// if (flags.zero)
-			// 	print_zero(real_width);
-			// else
-				print_width_space(real_width);
-		}
+
+		
+		// if (real_width >= real_precision)
+		// {
+		// 	print_width_space(real_width);
+		// }
+		print_width_space(real_width);
 		
 		if (nb < 0)
 			ft_putchar('-');
@@ -218,6 +218,9 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags) // PAS DE GESTION DES ZE
 			
 		if (real_precision > 0)
 			print_zero(real_precision);
+		
+		// if (real_precision > 0)
+		// 	print_width_space(real_precision);
 
 		// if (flags.precision < len_nb)
 		// 	ft_putchar(' ');
@@ -226,13 +229,12 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags) // PAS DE GESTION DES ZE
 		ft_putnbr(positive_nb(nb));
 
 		// if (real_width > real_precision)
-		if (real_width >= real_precision)
-		{
-			if (flags.zero)
-				print_zero(real_width);
-			else
-				print_width_space(real_width);
-		}
+		
+		// if (real_width >= real_precision)
+		// {
+		// 	print_width_space(real_width);
+		// }
+		print_width_space(real_width);
 	}
 
 	return (len_nb + real_width + real_precision);

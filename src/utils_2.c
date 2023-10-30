@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:27:45 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 10:55:17 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 21:09:14 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,17 @@ int	determine_plus_or_space(long nb, t_flags flags)
 	else if (flags.space && !flags.plus_sign && nb >= 0)
 		space_sign++;
 	return (plus_sign + space_sign);
+}
+
+int	determine_plus(long nb, t_flags flags)
+{
+	int	plus_sign;
+
+	plus_sign = 0;
+
+	if (flags.plus_sign && nb >= 0 && !flags.space)
+		plus_sign++;
+	return (plus_sign);
 }
 
 long	positive_nb(long nb)

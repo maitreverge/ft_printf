@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/30 16:46:50 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 21:09:33 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ int	zero_case(t_flags flags);
 
 long		positive_nb(long nb);
 int	determine_plus_or_space(long nb, t_flags flags);
+int	determine_plus(long nb, t_flags flags);
+
 
 
 
