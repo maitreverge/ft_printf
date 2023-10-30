@@ -9,6 +9,7 @@ int main(void)
 	char *empty_adress = NULL;
 	int pos_int = 123;
 	int neg_int = -123;
+	int nul_int = 0;
 	int hexa = 0xdeadc0de;
 	int neg_hexa = 0xD7;
 	int octal = 0337;
@@ -24,22 +25,46 @@ int main(void)
 
 	// printf("[%50p]\n-----\n\n", empty_adress);
 	
-	return_value = printf("[%+7i]", pos_int);
+	// return_value = printf("[%.4i]", pos_int);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	// return_value = printf("[%.3i]", neg_int);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	// return_value = printf("[%.i]", nul_int);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	return_value = printf("[%.6i]", 12345);
 
 	printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
-	return_value = printf("[%+7i]", neg_int);
+	return_value = printf("[%+.6i]", 12345);
 
 	printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
-	return_value = printf("[%+07i]", pos_int);
+	// return_value = printf("[%+.6i]", -12345);
 
-	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	// return_value = printf("[%.1i]", nul_int);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	// return_value = printf("[%.1i]", 1);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	// 	return_value = printf("[%.2i]", 1);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
 
-	return_value = printf("[%+07i]", neg_int);
+	// return_value = printf("[%.7i]", nul_int);
 
-	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
 	
 	// printf("%d\n-----\n\n", neg_int);

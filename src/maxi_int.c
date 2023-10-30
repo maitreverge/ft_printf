@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/28 12:32:53 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 10:08:52 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	print_i_and_d_reload(int n, t_flags flags)
 	sp_pl = 0;
 	if (!flags.point)
 		flags.lenght_print = preci_0(nb, len_nb, flags, sp_pl);
-	// else
-	// 	flags.lenght_print = preci_1(nb, len_nb, flags, sp_pl);
+	else
+		flags.lenght_print = preci_1(nb, len_nb, flags, sp_pl);
 	return (flags.lenght_print);
 }
 
@@ -104,26 +104,43 @@ int	preci_0_width_1(long nb, int len_nb, t_flags flags, int sp_pl)
 }
 
 
+int	preci_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES ZEROS
+{
+	if (!flags.width)
+		flags.lenght_print = preci_1_width_0(nb, len_nb, flags, sp_pl);
+	// else (flags.width)
+	// 	flags.lenght_print = preci_1_width_1(nb, len_nb, flags, sp_pl);
+	return (flags.lenght_print);
+}
 
 
-// int	preci_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES ZEROS
-// {
-// 	if (!flags.width)
-// 		flags.lenght_print = preci_1_width_0(nb, len_nb, flags, sp_pl);
-// 	else (flags.width)
-// 		flags.lenght_print = preci_1_width_1(nb, len_nb, flags, sp_pl);
-// 	return (flags.lenght_print);
-// }
+int	preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES ZEROS
+{
+	int real_precision;
 
-// int	preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES ZEROS
-// {
+	if (nb == 0 && flags.precision == 0) // gestion si nb == 0, cas a la con
+		return (0);
+		
+	real_precision = flags.precision - positive_nb(nb);
+
+	sp_pl = print_plus_or_space(nb, flags);
+
+	if (nb < 0)
+		ft_putchar('-');
+
+	if (real_precision > 0)
+		print_zero(real_precision);
+	else
+		real_precision = 0;
+
+	ft_putnbr(positive_nb(nb));
 	
-// }
+	return (len_nb + sp_pl + real_precision);
+}
+
 
 // int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES ZEROS
 // {
 	
 // }
-
-///////////////// OTHERS FUNCTIONS ///////////////////////////////////
 

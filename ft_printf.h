@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/28 12:23:36 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 10:06:22 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,8 @@ int		print_i_and_d_reload(int nb, t_flags flags);
 int		preci_0(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_0_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_0_width_1(long nb, int len_nb, t_flags flags, int sp_pl);
-// int		preci_1(long nb, int len_nb, t_flags flags, int sp_pl);
-// int		preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
+int		preci_1(long nb, int len_nb, t_flags flags, int sp_pl);
+int		preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
 // int		preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl);
 
 int		positive_nb(long nb);
