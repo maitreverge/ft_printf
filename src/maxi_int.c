@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 12:58:34 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 13:46:17 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 	real_precision = flags.precision - len_prec;
 	if (real_precision < 0)
 		real_precision = 0;
-	real_width = flags.width - determine_plus_or_space(nb, flags) - len_nb;
+	real_width = flags.width - determine_plus_or_space(nb, flags) - len_nb - real_precision;
 	if (real_width < 0)
 		real_width = 0;
 	if (flags.precision == 0)
@@ -180,7 +180,7 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 		
 		ft_putnbr(positive_nb(nb));
 	}
-	else // ! AVEC FLAG -y
+	else // ! AVEC FLAG -
 	{
 		sp_pl = print_plus_or_space(nb, flags);
 		
@@ -192,7 +192,7 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 		
 		ft_putnbr(positive_nb(nb));
 
-		
+		// ! erreur
 		if (real_width > real_precision)
 		{
 			if (flags.zero)
