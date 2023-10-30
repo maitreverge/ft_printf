@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 15:39:42 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 16:47:02 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	preci_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES
 	if (!flags.width)
 		flags.lenght_print = preci_1_width_0(nb, len_nb, flags, sp_pl);
 	else
-		flags.lenght_print = preci_1_width_1(nb, len_nb, flags, sp_pl);
+		flags.lenght_print = preci_1_width_1(nb, len_nb, flags);
 	return (flags.lenght_print);
 }
 
@@ -144,59 +144,88 @@ int	preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 }
 
 
-int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GESTION DES ZEROS
+int	preci_1_width_1(long nb, int len_nb, t_flags flags) // PAS DE GESTION DES ZEROS
 {
 	int real_width;
 	int real_precision;
 	int	len_prec;
-	// int return_polarity;
-	// return_polarity = 0;
 
 	len_prec = len_nb;
 	if (nb < 0)
 		len_prec -= 1;
+
+	
 	real_precision = flags.precision - len_prec;
 	if (real_precision < 0)
 		real_precision = 0;
+	
+	
 	real_width = flags.width - determine_plus_or_space(nb, flags) - len_nb - real_precision;
 	if (real_width < 0)
 		real_width = 0;
-	if (flags.precision == 0)
-		return (preci_0_width_1(nb, len_nb, flags, sp_pl));
+	if (!flags.precision && !nb)
+		return (zero_case(flags)); // !!!!!! ZERO CASE
 
 	if (!flags.minus_sign) // ! width, polarity, number
 	{
-		if (real_width > real_precision)
+		// if (real_width > real_precision)
+		if (real_width >= real_precision)
 		{
-			print_width_space(real_width);
+			// if (flags.zero)
+			// 	print_zero(real_width);
+			// else
+				print_width_space(real_width);
 		}
 		
 		if (nb < 0)
 			ft_putchar('-');
 
-		sp_pl = print_plus_or_space(nb, flags);
+		// sp_pl = print_plus_or_space(nb, flags);
+		print_plus_or_space(nb, flags);
 		
+		
+		// if (!flags.precision && !nb)
+		// 	print_width_space(real_precision);
+		// else
+		// 	print_zero(real_precision);
 		
 		if (real_precision > 0)
 			print_zero(real_precision);
 		
+		
+
+		// if (flags.precision < len_nb)
+		// 	ft_putchar(' ');
+		// else
+		// 	ft_putnbr(positive_nb(nb));
 		ft_putnbr(positive_nb(nb));
 
 	}
 	else // ! AVEC FLAG -
 	{
-		sp_pl = print_plus_or_space(nb, flags);
+		
+		// sp_pl = print_plus_or_space(nb, flags);
+		print_plus_or_space(nb, flags);
 		
 		if (nb < 0)
 			ft_putchar('-');
+
+		// if (!flags.precision && !nb)
+		// 	print_width_space(real_precision);
+		// else
+		// 	print_zero(real_precision);
 			
 		if (real_precision > 0)
 			print_zero(real_precision);
-	
+
+		// if (flags.precision < len_nb)
+		// 	ft_putchar(' ');
+		// else
+		// 	ft_putnbr(positive_nb(nb));
 		ft_putnbr(positive_nb(nb));
 
-		// ! erreur
-		if (real_width > real_precision)
+		// if (real_width > real_precision)
+		if (real_width >= real_precision)
 		{
 			if (flags.zero)
 				print_zero(real_width);
@@ -208,3 +237,8 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 	return (len_nb + real_width + real_precision);
 }
 
+int	zero_case(t_flags flags)
+{
+	print_zero(flags.width);
+	return (flags.width);
+}
