@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/30 10:06:22 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 10:55:22 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int		preci_1(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
 // int		preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl);
 
-int		positive_nb(long nb);
+long		positive_nb(long nb);
 int	determine_plus_or_space(long nb, t_flags flags);
 
 

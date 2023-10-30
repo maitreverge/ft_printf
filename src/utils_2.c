@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:27:45 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/28 12:22:57 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 10:55:17 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,7 @@ int	determine_plus_or_space(long nb, t_flags flags)
 	return (plus_sign + space_sign);
 }
 
-int	positive_nb(long nb)
+long	positive_nb(long nb)
 {
 	if (nb < 0)
 		return (nb * -1);
