@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 10:19:10 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 12:14:08 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 12:58:34 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,11 +159,15 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 	real_width = flags.width - determine_plus_or_space(nb, flags) - len_nb;
 	if (real_width < 0)
 		real_width = 0;
+	if (flags.precision == 0)
+		return (preci_0_width_1(nb, len_nb, flags, sp_pl));
 
-	if (!flags.minus_sign) // width, polarity, number
+	if (!flags.minus_sign) // ! width, polarity, number
 	{
 		if (real_width > real_precision)
+		{
 			print_width_space(real_width);
+		}
 		
 		if (nb < 0)
 			ft_putchar('-');
@@ -172,13 +176,11 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 		
 		
 		if (real_precision > 0)
-		print_zero(real_precision);
-		else
-			real_precision = 0;
+			print_zero(real_precision);
 		
 		ft_putnbr(positive_nb(nb));
 	}
-	else
+	else // ! AVEC FLAG -y
 	{
 		sp_pl = print_plus_or_space(nb, flags);
 		
@@ -186,26 +188,33 @@ int	preci_1_width_1(long nb, int len_nb, t_flags flags, int sp_pl) // PAS DE GES
 			ft_putchar('-');
 			
 		if (real_precision > 0)
-		print_zero(real_precision);
+			print_zero(real_precision);
 		
 		ft_putnbr(positive_nb(nb));
 
 		
 		if (real_width > real_precision)
-			print_width_space(real_width);
-		else
-			real_precision = 0;
+		{
+			if (flags.zero)
+				print_zero(real_width);
+			else
+				print_width_space(real_width);
+		}
 	}
 
-	if (flags.width < flags.precision)
+	// ? Valeurs de retour
+
+	if (flags.width < flags.precision) // %5.10
 	{
 		if (flags.precision > len_nb)
 			return flags.precision + sp_pl;
 		else
 			return (len_nb + sp_pl);
 	}
+	// else // %-10.5
+	return (flags.width + sp_pl);
 	// return (sp_pl + real_width + flags.precision + len_nb);
-	return (sp_pl + real_width + real_precision + len_nb);
+	// return (sp_pl + real_width + real_precision + len_nb);
 
 }
 
