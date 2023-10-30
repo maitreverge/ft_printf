@@ -37,15 +37,21 @@ int main(void)
 
 	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
-	return_value = printf("[%.6i]", 12345);
+	return_value = printf("[%-12.8i]", -12345);
 
 	printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
-	return_value = printf("[%+.6i]", 12345);
+	// return_value = printf("[%+.6i]", 12345);
 
-	printf("\n---\nReturn value = %i\n\n", return_value - 2);
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
-    
+	// return_value = printf("[%.7i]", -12345);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
+
+	// return_value = printf("[%+.7i]", -12345);
+
+	// printf("\n---\nReturn value = %i\n\n", return_value - 2);
 
 
 	// return_value = printf("[%+.6i]", -12345);
