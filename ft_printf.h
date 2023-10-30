@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/30 21:09:33 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/30 21:53:52 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
-# include <stdio.h> // DO NOT FORGET TO DELETE LATER
+# include <stdio.h> // ! DO NOT FORGET TO DELETE LATER
 
 # define FT_INT_MAX 2147483647
 # define FT_INT_MIN -2147483648
@@ -63,16 +63,8 @@ int		empty_adress(char *nul_str, t_flags flags);
 void	putnbr_hexa_adress(unsigned long nb);
 int		intlen_hexa(unsigned long n);
 
-// %i && %d FIRST TRY
-int		print_i_and_d(int nb, t_flags flags);
-int		yes_precision(int nb, int len_nb, t_flags flags);
-int		no_precision(int nb, int len_nb, t_flags flags);
-int		yes_width_int(int nb, int len_nb, t_flags flags);
-int		no_width_int(int nb, int len_nb, t_flags flags);
-int		yes_minus(int nb, int space_plus_flag, t_flags flags, int polarity);
-int		no_minus(int nb, int space_plus_flag, t_flags flags, int polarity);
 
-// %i && %d SECOND TRY
+// %i && %d
 int		print_i_and_d_reload(int nb, t_flags flags);
 int		preci_0(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_0_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
@@ -81,27 +73,20 @@ int		preci_1(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_1(long nb, int len_nb, t_flags flags);
 
-int	zero_case(t_flags flags);
+int		zero_case(t_flags flags);
 
-
-long		positive_nb(long nb);
-int	determine_plus_or_space(long nb, t_flags flags);
-int	determine_plus(long nb, t_flags flags);
-
-
-
-
-
-
-
-
-
-
+long	positive_nb(long nb);
+int		determine_plus_or_space(long nb, t_flags flags);
+int		determine_plus(long nb, t_flags flags);
 
 
 // %u
 
+
+
 // %x && %X
+
+
 
 
 // utils
