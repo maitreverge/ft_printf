@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 16:24:46 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:43:52 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int		yes_width(char *nul_str, t_flags flags);
 int		print_adress(unsigned long nb, t_flags flags);
 int		yes_width_hexa(char *prefix, t_flags flags, unsigned long nb);
 int		empty_adress(char *nul_str, t_flags flags);
-// void	putnbr_hexa_adress(unsigned long nb);
 
 
 // %i && %d
@@ -72,15 +71,9 @@ int		preci_1(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_1(long nb, int len_nb, t_flags flags);
 
-
-int	yes_minus(long nb, int len_nb, int sp_pl, t_flags flags);
-
+int		yes_minus(long nb, int len_nb, int sp_pl, t_flags flags);
 void	no_min(long nb, int real_width, int real_precision, t_flags f);
 void	yes_min(long nb, int real_width, int real_precision, t_flags f);
-
-
-
-
 
 
 // %u
@@ -92,6 +85,11 @@ int		preci_1_u(long nb, int len_nb, t_flags flags);
 int		preci_1_width_0_u(long nb, int len_nb, t_flags flags);
 int		preci_1_width_1_u(long nb, int len_nb, t_flags flags);
 int		zero_case_u(t_flags flags);
+
+void	no_minus_u(long nb, int real_width, int real_precision);
+void	yes_minus_u(long nb, int real_width, int real_precision);
+
+
 
 
 // %x
