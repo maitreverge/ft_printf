@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 13:50:22 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:07:33 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ int		preci_1_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 int		preci_1_width_1_x(unsigned long nb, int len_nb, t_flags f, int real_prec);
 
 
-int		print_real_width_1(int real_width);
-int		print_real_width_2(int real_width, t_flags flags);
 
 
 
@@ -114,7 +112,7 @@ int		preci_0_w_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
 int		preci_0_w_1_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
 int		preci_1_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
 int		preci_1_w_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
-int		preci_1_w_1_upx(unsigned long nb, int len_nb, t_flags f);
+int		preci_1_w_1_upx(unsigned long nb, int len_nb, t_flags f, int real_prec);
 
 
 
@@ -151,6 +149,13 @@ long	positive_nb(long nb);
 void	putnbr_hexa(unsigned long nb, char c);
 
 
+// utils_5.c
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+int		print_real_width_1(int real_width);
+int		print_real_width_2(int real_width, t_flags flags);
+
+
 // libft_functions.c
 
 void	ft_bzero(void *s, size_t n);
@@ -160,9 +165,6 @@ int		ft_isdigit(int c);
 void	*my_calloc(size_t count, size_t size);
 
 
-// ft_putstr.c
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
 
 
 

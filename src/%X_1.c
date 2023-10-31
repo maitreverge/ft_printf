@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 09:55:46 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 13:51:55 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:01:45 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,78 +28,17 @@ int	print_upx(unsigned int n, t_flags f)
 	return (f.lenght_print);
 }
 
-int	preci_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag)
-{
-	if (!f.width)
-		f.lenght_print = preci_0_w_0_upx(nb, len_nb, f, hashtag);
-	else
-		f.lenght_print = preci_0_w_1_upx(nb, len_nb, f, hashtag);
-	return (f.lenght_print);
-}
-
-int	preci_0_w_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag)
-{
-	hashtag = print_hashtag_up(f, nb);
-	putnbr_hexa(nb, 'X');
-	return (len_nb + hashtag);
-}
-
-int	preci_0_w_1_upx(unsigned long nb, int len_nb, t_flags f, int hashtag)
-{
-	int	real_width;
-
-	if (f.minus_sign)
-	{
-		hashtag = print_hashtag_up(f, nb);
-		putnbr_hexa(nb, 'X');
-		real_width = f.width - hashtag - len_nb;
-		if (real_width > 0)
-			print_width_space(real_width);
-		else
-			real_width = 0;
-	}
-	else
-	{
-		if (!f.zero)
-		{
-			real_width = f.width - determine_hashtag(f, nb) - len_nb;
-			if (real_width > 0)
-			{
-				if (f.zero)
-					print_zero(real_width);
-				else
-					print_width_space(real_width);
-			}
-			else
-				real_width = 0;
-			hashtag = print_hashtag_up(f, nb);
-			putnbr_hexa(nb, 'X');
-		}
-		else
-		{
-			hashtag = print_hashtag_up(f, nb);
-			real_width = f.width - hashtag - len_nb;
-			if (real_width > 0)
-			{
-				if (f.zero)
-					print_zero(real_width);
-				else
-					print_width_space(real_width);
-			}
-			else
-				real_width = 0;
-			putnbr_hexa(nb, 'X');
-		}
-	}
-	return (len_nb + hashtag + real_width);
-}
-
 int	preci_1_upx(unsigned long nb, int len_nb, t_flags f, int hashtag)
 {
+	int	real_prec;
+
+	real_prec = f.precision - len_nb;
+	if (real_prec < 0)
+		real_prec = 0;
 	if (!f.width)
 		f.lenght_print = preci_1_w_0_upx(nb, len_nb, f, hashtag);
 	else
-		f.lenght_print = preci_1_w_1_upx(nb, len_nb, f);
+		f.lenght_print = preci_1_w_1_upx(nb, len_nb, f, real_prec);
 	return (f.lenght_print);
 }
 
@@ -121,17 +60,11 @@ int	preci_1_w_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag)
 	return (len_nb + hashtag + real_precision);
 }
 
-int	preci_1_w_1_upx(unsigned long nb, int len_nb, t_flags f)
+int	preci_1_w_1_upx(unsigned long nb, int len_nb, t_flags f, int real_prec)
 {
 	int	real_width;
-	int	real_precision;
-	int	len_prec;
 
-	len_prec = len_nb;
-	real_precision = f.precision - len_prec;
-	if (real_precision < 0)
-		real_precision = 0;
-	real_width = f.width - determine_hashtag(f, nb) - len_nb - real_precision;
+	real_width = f.width - determine_hashtag(f, nb) - len_nb - real_prec;
 	if (real_width < 0)
 		real_width = 0;
 	if (!f.precision && !nb)
@@ -140,17 +73,17 @@ int	preci_1_w_1_upx(unsigned long nb, int len_nb, t_flags f)
 	{
 		print_width_space(real_width);
 		print_hashtag_up(f, nb);
-		if (real_precision > 0)
-			print_zero(real_precision);
+		if (real_prec > 0)
+			print_zero(real_prec);
 		putnbr_hexa(nb, 'X');
 	}
 	else
 	{
 		print_hashtag_up(f, nb);
-		if (real_precision > 0)
-			print_zero(real_precision);
+		if (real_prec > 0)
+			print_zero(real_prec);
 		putnbr_hexa(nb, 'X');
 		print_width_space(real_width);
 	}
-	return (len_nb + real_width + real_precision);
+	return (len_nb + real_width + real_prec);
 }

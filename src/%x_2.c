@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:21:23 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 13:36:34 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:06:27 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,27 +55,4 @@ int	preci_0_width_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 		putnbr_hexa(nb, 'x');
 	}
 	return (len_nb + hashtag + real_width);
-}
-
-int	print_real_width_1(int real_width)
-{
-	if (real_width > 0)
-	{
-		print_width_space(real_width);
-		return (real_width);
-	}
-	return (0);
-}
-
-int	print_real_width_2(int real_width, t_flags flags)
-{
-	if (real_width > 0)
-	{
-		if (flags.zero)
-			print_zero(real_width);
-		else
-			print_width_space(real_width);
-		return (real_width);
-	}
-	return (0);
 }
