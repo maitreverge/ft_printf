@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:55:53 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 10:39:47 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 17:09:08 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,11 @@ void	print_struct(t_flags s)
 	printf("point = %i\n---\n", s.point);
 	printf("width = %i\n---\n", s.width);
 	printf("precision = %i\n---\n", s.precision);
+}
+
+int	check_flags(char c)
+{
+	if (c == '#' || c == ' ' || c == '+' || c == '-')
+		return (1);
+	return (0);
 }
