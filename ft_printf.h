@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 13:42:33 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 13:50:22 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,13 +108,13 @@ int		print_real_width_2(int real_width, t_flags flags);
 
 
 // %X
-int		print_upx(unsigned int n, t_flags flags);
-int		preci_0_upx(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_0_width_0_upx(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_0_width_1_upx(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_1_upx(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_1_width_0_upx(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_1_width_1_upx(unsigned long nb, int len_nb, t_flags flags);
+int		print_upx(unsigned int n, t_flags f);
+int		preci_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
+int		preci_0_w_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
+int		preci_0_w_1_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
+int		preci_1_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
+int		preci_1_w_0_upx(unsigned long nb, int len_nb, t_flags f, int hashtag);
+int		preci_1_w_1_upx(unsigned long nb, int len_nb, t_flags f);
 
 
 
