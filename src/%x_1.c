@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:51:32 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 14:01:17 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:10:58 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ int	preci_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 	if (real_prec < 0)
 		real_prec = 0;
 	if (!flags.width)
-		flags.lenght_print = preci_1_width_0_x(nb, len_nb, flags, hashtag);
+		flags.lenght_print = preci_1_w_0_x(nb, len_nb, flags, hashtag);
 	else
-		flags.lenght_print = preci_1_width_1_x(nb, len_nb, flags, real_prec);
+		flags.lenght_print = preci_1_w_1_x(nb, len_nb, flags, real_prec);
 	return (flags.lenght_print);
 }
 
-int	preci_1_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
+int	preci_1_w_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 {
 	int	real_precision;
 	int	len_prec;
@@ -60,7 +60,7 @@ int	preci_1_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 	return (len_nb + hashtag + real_precision);
 }
 
-int	preci_1_width_1_x(unsigned long nb, int len_nb, t_flags f, int real_prec)
+int	preci_1_w_1_x(unsigned long nb, int len_nb, t_flags f, int real_prec)
 {
 	int	real_width;
 

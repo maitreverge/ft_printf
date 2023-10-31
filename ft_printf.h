@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 14:07:33 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 14:10:07 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,18 +90,11 @@ int		zero_case_u(t_flags flags);
 // %x
 int		print_x(unsigned int n, t_flags flags);
 int		preci_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_0_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_0_width_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_0_w_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_0_w_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
 int		preci_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_1_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_1_width_1_x(unsigned long nb, int len_nb, t_flags f, int real_prec);
-
-
-
-
-
-
-
+int		preci_1_w_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_w_1_x(unsigned long nb, int len_nb, t_flags f, int real_prec);
 
 
 
