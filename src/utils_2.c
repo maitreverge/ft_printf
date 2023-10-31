@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 13:27:45 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 21:09:14 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:33:11 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	int_len(long n)
 	int	i;
 
 	i = 0;
-	// if (n == 0)
-	// 	return (1);
 	if (n < 0)
 	{
 		i++;
@@ -45,7 +43,6 @@ int	int_len_zero(long n)
 		i++;
 		n *= (-1);
 	}
-	// i = 0;
 	while (n != 0)
 	{
 		n = n / 10;
@@ -59,7 +56,7 @@ char	*ft_strndup(const char *s, size_t n)
 	unsigned int	i;
 	char			*str;
 
-	str = ft_calloc(n + 1, sizeof(char));
+	str = my_calloc(n + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -91,7 +88,6 @@ int	print_plus_or_space(long nb, t_flags flags)
 
 	plus_sign = 0;
 	space_sign = 0;
-
 	if (flags.plus_sign && nb >= 0 && !flags.space)
 	{
 		plus_sign++;
@@ -103,37 +99,4 @@ int	print_plus_or_space(long nb, t_flags flags)
 		ft_putchar(' ');
 	}
 	return (plus_sign + space_sign);
-}
-
-int	determine_plus_or_space(long nb, t_flags flags)
-{
-	int	plus_sign;
-	int	space_sign;
-
-	plus_sign = 0;
-	space_sign = 0;
-
-	if (flags.plus_sign && nb >= 0 && !flags.space)
-		plus_sign++;
-	else if (flags.space && !flags.plus_sign && nb >= 0)
-		space_sign++;
-	return (plus_sign + space_sign);
-}
-
-int	determine_plus(long nb, t_flags flags)
-{
-	int	plus_sign;
-
-	plus_sign = 0;
-
-	if (flags.plus_sign && nb >= 0 && !flags.space)
-		plus_sign++;
-	return (plus_sign);
-}
-
-long	positive_nb(long nb)
-{
-	if (nb < 0)
-		return (nb * -1);
-	return (nb);
 }

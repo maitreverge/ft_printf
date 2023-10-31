@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 10:01:53 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:32:21 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int		print_adress(unsigned long nb, t_flags flags);
 int		yes_width_hexa(char *prefix, t_flags flags, unsigned long nb);
 int		empty_adress(char *nul_str, t_flags flags);
 // void	putnbr_hexa_adress(unsigned long nb);
-int		intlen_hexa(unsigned long n);
 
 
 // %i && %d
@@ -75,9 +74,6 @@ int		preci_1_width_1(long nb, int len_nb, t_flags flags);
 
 int		zero_case(t_flags flags);
 
-long	positive_nb(long nb);
-int		determine_plus_or_space(long nb, t_flags flags);
-int		determine_plus(long nb, t_flags flags);
 
 
 // %u
@@ -113,38 +109,61 @@ int		preci_1_width_1_X(unsigned long nb, int len_nb, t_flags flags);
 
 
 
-// utils
 
 
-void	*ft_calloc(size_t count, size_t size);
-int		ft_isdigit(int c);
-size_t	ft_strlen(const char *s);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memset(void *b, int c, size_t len);
-
-
-int		check_flags(char c);
+// utils_1.c
 int		width_or_precision(const char *s);
 void	print_width_space(int nb);
 void	print_zero(int nb);
 int		pos_width(int width, int lenght);
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	print_struct(t_flags s);
+int		count_flags(t_flags s);
+
+
+// utils_2.c
 int		int_len(long n);
 int		int_len_zero(long n);
-int		count_flags(t_flags s);
 char	*ft_strndup(const char *s, size_t n);
 void	ft_putnbr(long nb);
 int		print_plus_or_space(long nb, t_flags flags);
 
+
+// utils_3.c
+int		print_hashtag_low(t_flags flags, unsigned long nb);
+int		print_hashtag_up(t_flags flags, unsigned long nb);
+int		determine_hashtag(t_flags flags, unsigned long nb);
+int		intlen_hexa(unsigned long n);
+int		intlen_hexa_zero(unsigned long n);
+
+
+// utils_4.c
+int		determine_plus_or_space(long nb, t_flags flags);
+int		determine_plus(long nb, t_flags flags);
+long	positive_nb(long nb);
 void	putnbr_hexa(unsigned long nb, char c);
 
-int	print_hashtag_low(t_flags flags, unsigned long nb);
-int	print_hashtag_up(t_flags flags, unsigned long nb);
-int	determine_hashtag(t_flags flags, unsigned long nb);
 
-int	intlen_hexa_zero(unsigned long n);
+// libft_functions.c
+
+void	ft_bzero(void *s, size_t n);
+size_t	ft_strlen(const char *s);
+void	*ft_memset(void *b, int c, size_t len);
+int		ft_isdigit(int c);
+void	*my_calloc(size_t count, size_t size);
+
+
+// ft_putstr.c
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+
+
+
+// ? fonctions inconnues
+
+int		check_flags(char c);
+void	print_struct(t_flags s);
+
+
+
 
 
 

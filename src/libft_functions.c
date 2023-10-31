@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 12:16:49 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 12:28:51 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:32:44 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_bzero(void *s, size_t n)
 	ft_memset(s, 0, n);
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*my_calloc(size_t count, size_t size)
 {
 	void	*buffer;
 
