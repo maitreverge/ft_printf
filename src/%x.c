@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:51:32 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 13:19:24 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 13:22:19 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,72 +26,6 @@ int	print_x(unsigned int n, t_flags flags)
 	else
 		flags.lenght_print = preci_1_x(nb, len_nb, flags, hashtag);
 	return (flags.lenght_print);
-}
-
-int	preci_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
-{
-	if (!flags.width)
-		flags.lenght_print = preci_0_width_0_x(nb, len_nb, flags, hashtag);
-	else
-		flags.lenght_print = preci_0_width_1_x(nb, len_nb, flags, hashtag);
-	return (flags.lenght_print);
-}
-
-int	preci_0_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
-{
-	hashtag = print_hashtag_low(flags, nb);
-	putnbr_hexa(nb, 'x');
-	return (len_nb + hashtag);
-}
-
-int	preci_0_width_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
-{
-	int	real_width;
-
-	if (flags.minus_sign)
-	{
-		hashtag = print_hashtag_low(flags, nb);
-		putnbr_hexa(nb, 'x');
-		real_width = flags.width - hashtag - len_nb;
-		if (real_width > 0)
-			print_width_space(real_width);
-		else
-			real_width = 0;
-	}
-	else
-	{
-		if (!flags.zero)
-		{
-			real_width = flags.width - determine_hashtag(flags, nb) - len_nb;
-			if (real_width > 0)
-			{
-				if (flags.zero)
-					print_zero(real_width);
-				else
-					print_width_space(real_width);
-			}
-			else
-				real_width = 0;
-			hashtag = print_hashtag_low(flags, nb);
-			putnbr_hexa(nb, 'x');
-		}
-		else
-		{
-			hashtag = print_hashtag_low(flags, nb);
-			real_width = flags.width - hashtag - len_nb;
-			if (real_width > 0)
-			{
-				if (flags.zero)
-					print_zero(real_width);
-				else
-					print_width_space(real_width);
-			}
-			else
-				real_width = 0;
-			putnbr_hexa(nb, 'x');
-		}
-	}
-	return (len_nb + hashtag + real_width);
 }
 
 int	preci_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag)
