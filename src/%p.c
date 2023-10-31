@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:01:58 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 10:52:03 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 09:15:15 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@ int	intlen_hexa(unsigned long n)
 		i++;
 	}
 	return (i);
-}
-
-void	putnbr_hexa_adress(unsigned long nb)
-{
-	if (nb > 15)
-		putnbr_hexa_adress(nb / 16);
-	ft_putchar("0123456789abcdef"[(nb % 16)]);
 }
 
 int	empty_adress(char *nul_str, t_flags flags)
@@ -53,14 +46,14 @@ int	yes_width_hexa(char *prefix, t_flags flags, unsigned long nb)
 	if (flags.minus_sign)
 	{
 		ft_putstr(prefix);
-		putnbr_hexa_adress(nb);
+		putnbr_hexa(nb, 'x');
 		print_width_space(flags.width - total_len);
 	}
 	else
 	{
 		print_width_space(flags.width - total_len);
 		ft_putstr(prefix);
-		putnbr_hexa_adress(nb);
+		putnbr_hexa(nb, 'x');
 	}
 	return (total_len + pos_width(flags.width, total_len));
 
@@ -76,7 +69,7 @@ int	print_adress(unsigned long nb, t_flags flags)
 	if (!flags.width)
 	{
 		ft_putstr(prefix);
-		putnbr_hexa_adress(nb);
+		putnbr_hexa(nb, 'x');
 		flags.lenght_print = (intlen_hexa(nb) + ft_strlen(prefix));
 	}
 	else
