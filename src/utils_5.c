@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:53:04 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 14:06:51 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 15:28:18 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,10 @@ int	print_real_width_2(int real_width, t_flags flags)
 		return (real_width);
 	}
 	return (0);
+}
+
+int	zero_case(t_flags flags)
+{
+	print_width_space(flags.width);
+	return (flags.width);
 }

@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 14:10:07 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:24:46 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,14 @@ int		preci_1(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_0(long nb, int len_nb, t_flags flags, int sp_pl);
 int		preci_1_width_1(long nb, int len_nb, t_flags flags);
 
-int		zero_case(t_flags flags);
+
+int	yes_minus(long nb, int len_nb, int sp_pl, t_flags flags);
+
+void	no_min(long nb, int real_width, int real_precision, t_flags f);
+void	yes_min(long nb, int real_width, int real_precision, t_flags f);
+
+
+
 
 
 
@@ -147,6 +154,7 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 int		print_real_width_1(int real_width);
 int		print_real_width_2(int real_width, t_flags flags);
+int		zero_case(t_flags flags);
 
 
 // libft_functions.c
