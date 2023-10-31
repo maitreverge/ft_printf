@@ -6,17 +6,17 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 09:55:46 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 10:01:29 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:42:18 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		print_X(unsigned int n, t_flags flags)
+int	print_X(unsigned int n, t_flags flags)
 {
 	unsigned long	nb;
-	int		len_nb;
-	int	hashtag;
+	int				len_nb;
+	int				hashtag;
 
 	nb = n;
 	len_nb = intlen_hexa_zero(n);
@@ -94,7 +94,6 @@ int	preci_0_width_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 	return (len_nb + hashtag + real_width);
 }
 
-
 int	preci_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 {
 	if (!flags.width)
@@ -103,7 +102,6 @@ int	preci_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 		flags.lenght_print = preci_1_width_1_X(nb, len_nb, flags);
 	return (flags.lenght_print);
 }
-
 
 int	preci_1_width_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 {
@@ -122,7 +120,6 @@ int	preci_1_width_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag)
 	putnbr_hexa(nb, 'X');
 	return (len_nb + hashtag + real_precision);
 }
-
 
 int	preci_1_width_1_X(unsigned long nb, int len_nb, t_flags flags)
 {

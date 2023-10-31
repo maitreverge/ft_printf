@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 10:31:47 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/25 16:43:36 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:39:55 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,6 @@ t_flags	zero_init_struct(void)
 	f.lenght_print = 0;
 	return (f);
 }
-
-// t_flags	cleaning_parsing(t_flags f)
-// {
-// 	if (f.plus_sign >= 1 && f.space >= 1)
-// 	{
-// 		f.plus_sign = 0;
-// 		f.space = 0;
-// 	}
-// 	if (f)
-// 	if (f.hashtag > 1)
-// 		f.hashtag = 1;
-// 	if (f.plus_sign > 1)
-// 		f.plus_sign = 1;
-// 	if (f.space > 1)
-// 		f.space = 1;
-// 	if (f.minus_sign > 1)
-// 		f.minus_sign = 1;
-// 	if (f.zero > 1)
-// 		f.zero = 1;
-// 	if (f.point > 1)
-// 		f.point = 1;
-// 	return (f);
-// }
 
 int	check_flags(char c)
 {
@@ -135,6 +112,5 @@ t_flags	turbo_parsing(const char *format)
 			i++;
 	}
 	current_flag.placeholder = format[i];
-	// current_flag = cleaning_parsing(current_flag);
 	return (current_flag);
 }

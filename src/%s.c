@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 11:36:59 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/26 13:40:13 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 12:35:53 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	empty_string(char *nul_str, t_flags flags)
 	}
 	return (flags.lenght_print);
 }
-
 
 int	print_string(char *str, t_flags flags)
 {
