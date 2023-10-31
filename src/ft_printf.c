@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 10:42:33 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 08:40:59 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 09:59:06 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ int	placeholder_behaviour(t_flags flags, va_list args)
 		result = print_i_and_d_reload(va_arg(args, int), flags);
 	else if (flags.placeholder == 'u')
 		result = print_unsigned(va_arg(args, unsigned int), flags);
+	else if (flags.placeholder == 'x')
+		result = print_x(va_arg(args, unsigned int), flags);
+	else if (flags.placeholder == 'X')
+		result = print_X(va_arg(args, unsigned int), flags);
 	return (result);
 }
 

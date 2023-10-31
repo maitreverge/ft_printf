@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 08:51:15 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 10:01:53 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int		yes_width(char *nul_str, t_flags flags);
 int		print_adress(unsigned long nb, t_flags flags);
 int		yes_width_hexa(char *prefix, t_flags flags, unsigned long nb);
 int		empty_adress(char *nul_str, t_flags flags);
-void	putnbr_hexa_adress(unsigned long nb);
+// void	putnbr_hexa_adress(unsigned long nb);
 int		intlen_hexa(unsigned long n);
 
 
@@ -91,13 +91,25 @@ int		preci_1_width_1_u(long nb, int len_nb, t_flags flags);
 int		zero_case_u(t_flags flags);
 
 
+// %x %X
+int		print_x(unsigned int n, t_flags flags);
+int		preci_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_0_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_0_width_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_width_1_x(unsigned long nb, int len_nb, t_flags flags);
+// int		zero_case_x(t_flags flags);
 
-
-
-
-
-// %x && %X
-
+// %x %X
+int		print_X(unsigned int n, t_flags flags);
+int		preci_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_0_width_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_0_width_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_width_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+int		preci_1_width_1_X(unsigned long nb, int len_nb, t_flags flags);
+// int		zero_case_x(t_flags flags);
 
 
 
@@ -125,6 +137,17 @@ int		count_flags(t_flags s);
 char	*ft_strndup(const char *s, size_t n);
 void	ft_putnbr(long nb);
 int		print_plus_or_space(long nb, t_flags flags);
+
+void	putnbr_hexa(unsigned long nb, char c);
+
+int	print_hashtag_low(t_flags flags, unsigned long nb);
+int	print_hashtag_up(t_flags flags, unsigned long nb);
+int	determine_hashtag(t_flags flags, unsigned long nb);
+
+int	intlen_hexa_zero(unsigned long n);
+
+
+
 
 
 #endif

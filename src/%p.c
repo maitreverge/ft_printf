@@ -6,24 +6,11 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 14:01:58 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 09:15:15 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 09:27:42 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-int	intlen_hexa(unsigned long n)
-{
-	int	i;
-
-	i = 0;
-	while (n != 0)
-	{
-		n = n / 16;
-		i++;
-	}
-	return (i);
-}
 
 int	empty_adress(char *nul_str, t_flags flags)
 {
