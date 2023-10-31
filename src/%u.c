@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 21:51:12 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/31 08:49:26 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 08:50:40 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int	preci_0_u(long nb, int len_nb, t_flags flags)
 
 int	preci_0_width_0_u(long nb, int len_nb)
 {
-	// sp_pl = print_plus_or_space(nb, flags);
 	ft_putnbr(nb);
 	return (len_nb);
 }
@@ -48,9 +47,7 @@ int	preci_0_width_1_u(long nb, int len_nb, t_flags flags)
 
 	if (flags.minus_sign)
 	{
-		// sp_pl = print_plus_or_space(nb, flags);
 		ft_putnbr(nb);
-		// real_width = flags.width - sp_pl - len_nb;
 		real_width = flags.width - len_nb;
 		if (real_width > 0)
 			print_width_space(real_width);
@@ -71,15 +68,12 @@ int	preci_0_width_1_u(long nb, int len_nb, t_flags flags)
 			}
 			else
 				real_width = 0;
-			// sp_pl = print_plus_or_space(nb, flags);
 			ft_putnbr(nb);
 		}
 		else
 		{
-			// sp_pl = print_plus_or_space(nb, flags);
 			if (nb < 0)
 				ft_putchar('-');
-			// real_width = flags.width - sp_pl - len_nb;
 			real_width = flags.width - len_nb;
 			if (real_width > 0)
 			{
@@ -93,7 +87,6 @@ int	preci_0_width_1_u(long nb, int len_nb, t_flags flags)
 			ft_putnbr(positive_nb(nb));
 		}
 	}
-	// return (len_nb + sp_pl + real_width);
 	return (len_nb + real_width);
 }
 
@@ -119,7 +112,6 @@ int	preci_1_width_0_u(long nb, int len_nb, t_flags flags)
 	if (nb == 0 && flags.precision == 0)
 		return (0);
 	real_precision = flags.precision - len_prec;
-	// sp_pl = print_plus_or_space(nb, flags);
 	if (nb < 0)
 		ft_putchar('-');
 	if (real_precision > 0)
@@ -127,7 +119,6 @@ int	preci_1_width_0_u(long nb, int len_nb, t_flags flags)
 	else
 		real_precision = 0;
 	ft_putnbr(positive_nb(nb));
-	// return (len_nb + sp_pl + real_precision);
 	return (len_nb + real_precision);
 }
 
@@ -154,14 +145,12 @@ int	preci_1_width_1_u(long nb, int len_nb, t_flags flags)
 		print_width_space(real_width);
 		if (nb < 0)
 			ft_putchar('-');
-		// print_plus_or_space(nb, flags);
 		if (real_precision > 0)
 			print_zero(real_precision);
 		ft_putnbr(positive_nb(nb));
 	}
 	else
 	{
-		// print_plus_or_space(nb, flags);
 		if (nb < 0)
 			ft_putchar('-');
 		if (real_precision > 0)

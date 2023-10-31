@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 08:43:43 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 08:51:15 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,14 @@ int		determine_plus(long nb, t_flags flags);
 
 
 // %u
-int	print_unsigned(unsigned int n, t_flags flags);
-int	preci_0_u(long nb, int len_nb, t_flags flags);
-int	preci_0_width_0_u(long nb, int len_nb);
-int	preci_0_width_1_u(long nb, int len_nb, t_flags flags);
-int	preci_1_u(long nb, int len_nb, t_flags flags);
-int	preci_1_width_0_u(long nb, int len_nb, t_flags flags);
-int	preci_1_width_1_u(long nb, int len_nb, t_flags flags);
-int	zero_case_u(t_flags flags);
+int		print_unsigned(unsigned int n, t_flags flags);
+int		preci_0_u(long nb, int len_nb, t_flags flags);
+int		preci_0_width_0_u(long nb, int len_nb);
+int		preci_0_width_1_u(long nb, int len_nb, t_flags flags);
+int		preci_1_u(long nb, int len_nb, t_flags flags);
+int		preci_1_width_0_u(long nb, int len_nb, t_flags flags);
+int		preci_1_width_1_u(long nb, int len_nb, t_flags flags);
+int		zero_case_u(t_flags flags);
 
 
 
