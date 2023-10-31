@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 17:22:30 by florianverg       #+#    #+#             */
-/*   Updated: 2023/10/31 12:32:21 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 13:19:10 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,25 +87,30 @@ int		preci_1_width_1_u(long nb, int len_nb, t_flags flags);
 int		zero_case_u(t_flags flags);
 
 
-// %x %X
+// %x
 int		print_x(unsigned int n, t_flags flags);
 int		preci_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
 int		preci_0_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
 int		preci_0_width_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
 int		preci_1_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
 int		preci_1_width_0_x(unsigned long nb, int len_nb, t_flags flags, int hashtag);
-int		preci_1_width_1_x(unsigned long nb, int len_nb, t_flags flags);
+int		preci_1_width_1_x(unsigned long nb, int len_nb, t_flags f, int real_prec);
 // int		zero_case_x(t_flags flags);
 
-// %x %X
+// %X
 int		print_X(unsigned int n, t_flags flags);
+
 int		preci_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+
 int		preci_0_width_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+
 int		preci_0_width_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+
 int		preci_1_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+
 int		preci_1_width_0_X(unsigned long nb, int len_nb, t_flags flags, int hashtag);
+
 int		preci_1_width_1_X(unsigned long nb, int len_nb, t_flags flags);
-// int		zero_case_x(t_flags flags);
 
 
 
