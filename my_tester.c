@@ -6,7 +6,7 @@
 /*   By: flverge <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 12:22:09 by flverge           #+#    #+#             */
-/*   Updated: 2023/10/30 21:21:57 by flverge          ###   ########.fr       */
+/*   Updated: 2023/10/31 08:44:11 by flverge          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -597,83 +597,83 @@ int	main(void)
 	
 	
 
-	// 	// * TEST 12
-	// displayTestSeparator("Test %u positive int", 95);
+		// * TEST 12
+	displayTestSeparator("Test %u positive int", 95);
 
-	// headings(1);
-	// v_printf = printf("%u", 42);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%u", 42);
-	// bn();
+	headings(1);
+	v_printf = printf("%u", 42);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%u", 42);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// // * TEST 13
+	// * TEST 13
 
-	// displayTestSeparator("Test %u int_max", 95);
+	displayTestSeparator("Test %u int_max", 95);
 
-	// headings(1);
-	// v_printf = printf("%u", FT_INT_MAX);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%u", FT_INT_MAX);
-	// bn();
+	headings(1);
+	v_printf = printf("%u", FT_INT_MAX);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%u", FT_INT_MAX);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
 
-	// // * TEST 14
+	// * TEST 14
 
-	// displayTestSeparator("Test %u null int", 95);
+	displayTestSeparator("Test %u null int", 95);
 
-	// headings(1);
-	// v_printf = printf("%u", 0);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%u", 0);
-	// bn();
+	headings(1);
+	v_printf = printf("%u", 0);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%u", 0);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// // * TEST 15
+	// * TEST 15
 
-	// displayTestSeparator("Test %u return ft int", 95);
+	displayTestSeparator("Test %u return ft int", 95);
 
-	// headings(1);
-	// v_printf = printf("%u", test_unsigned_int(42));
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%u", test_unsigned_int(42));
-	// bn();
+	headings(1);
+	v_printf = printf("%u", test_unsigned_int(42));
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%u", test_unsigned_int(42));
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// // * TEST 16
+	// * TEST 16
 
-	// displayTestSeparator("Test %u beyond int max", 95);
+	displayTestSeparator("Test %u beyond int max", 95);
 
-	// headings(1);
-	// v_printf = printf("%u", 2148000000);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%u", 2148000000);
-	// bn();
+	headings(1);
+	v_printf = printf("%u", 2148000000);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%u", 2148000000);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
-	// // * TEST 17
+	// * TEST 17
 
-	// displayTestSeparator("Test %i int positive", 92);
+	displayTestSeparator("Test %i int positive", 92);
 
-	// headings(1);
-	// v_printf = printf("%i", 42);
-	// bn();
-	// headings(2);
-	// v_ftprintf = ft_printf("%i", 42);
-	// bn();
+	headings(1);
+	v_printf = printf("%i", 42);
+	bn();
+	headings(2);
+	v_ftprintf = ft_printf("%i", 42);
+	bn();
 
-	// return_values(v_printf, v_ftprintf);
+	return_values(v_printf, v_ftprintf);
 
 	// * TEST 18
 
