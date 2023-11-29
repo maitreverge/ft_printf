@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="img/ft_printf.png" width="50%"/>
+  <img src="img/ft_printf.png" width="70%"/>
 </p>
 
 ## 🚀 SYNOPSIS
