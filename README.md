@@ -1,14 +1,16 @@
-<h1 align="center">ft_printf</h1>
-
 <p align="center">
-  <img src="https://github.com/mcombeau/mcombeau/blob/main/42_badges/ft_printfe.png" />
+  <img src="img/ft_printf.png" width="50%"/>
 </p>
 
-<div style="text-align: center;">
-  <small>
-    <a href="https://github.com/mcombeau">Consider paying a visit to @mcombeau for those gorgeous 42 project logos 🤌</a>
-  </small>
-</div>
+## 🚀 SYNOPSIS
+
+The `ft_printf` project is an essential undertaking at 42 school where students are challenged to implement their version of the printf function in the C language.
+
+This project delves into the intricacies of formatting and output in C, requiring students to handle a variety of format specifiers and modifiers.
+
+By successfully completing the ft_printf project, students not only gain a deep understanding of how the printf function works but also enhance their skills in string manipulation and output formatting in C.
+
+This project serves as a valuable exploration of the complexities involved in building a fundamental and widely used standard library function.
 
 ## 🛠️ FUNCTION PROTOTYPES AND CONSIDERATIONS
 
