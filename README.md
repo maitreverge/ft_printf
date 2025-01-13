@@ -207,3 +207,6 @@ Despite working as expected, I know for a fact that my code base have 3 major fl
 - My codebase is long, very long, and redundant.
 - I kind of follow a way of thinking made up of ``if``, ``else``, and ``while`` conditional statements, instead of building more complex but versatile functions.
 - My parsing was a bit chaotic (in the ``parsing.c`` file) while working on it because across my codebase, I only plug copies of my original structure instead of a pointer towards it. It does works, but it can be prone to errors.
+
+- ## 🤝 CONTRIBUTION
+Contributions are open, open a Github Issue or submit a PR 🚀
